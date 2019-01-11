@@ -1,0 +1,15 @@
+Package: h3
+Title: R bindings for H3
+Version: 0.0.0.9000
+Authors@R: person("Stefan","Kuethe", role = c("aut", "cre"), email = "crazycapivara@gmail.com")
+Maintainer: Stefan Kuethe <crazycapivara@gmail.com>
+Description: Provides R bindings for H3 <https://uber.github.io/h3/>,
+  a hexagonal hierarchical spatial indexing system.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+LinkingTo: 
+    Rcpp
+Imports: 
+    Rcpp
+RoxygenNote: 6.1.0
