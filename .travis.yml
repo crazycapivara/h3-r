@@ -2,7 +2,6 @@
 
 language: R
 sudo: true
-dist: xenial
 latex: false
 cache: packages
 
