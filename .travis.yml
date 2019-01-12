@@ -14,3 +14,4 @@ before_install:
   - sudo make install
   - popd
   - rm -rf h3c
+  - ls /usr/local/lib/
