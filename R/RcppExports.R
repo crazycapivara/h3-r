@@ -6,6 +6,6 @@
 #' @return numeric vector
 #' @export
 num_hexagons <- function(res) {
-    .Call(`_h3_num_hexagons`, res)
+    .Call(`_h3cr_num_hexagons`, res)
 }
 

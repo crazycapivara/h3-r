@@ -1,3 +1,3 @@
-#' @useDynLib h3, .registration = TRUE
+#' @useDynLib h3cr, .registration = TRUE
 #' @importFrom Rcpp sourceCpp
 NULL

@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // num_hexagons
 NumericVector num_hexagons(NumericVector res);
-RcppExport SEXP _h3_num_hexagons(SEXP resSEXP) {
+RcppExport SEXP _h3cr_num_hexagons(SEXP resSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -18,11 +18,11 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_h3_num_hexagons", (DL_FUNC) &_h3_num_hexagons, 1},
+    {"_h3cr_num_hexagons", (DL_FUNC) &_h3cr_num_hexagons, 1},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_h3(DllInfo *dll) {
+RcppExport void R_init_h3cr(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

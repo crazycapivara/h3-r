@@ -1,4 +1,4 @@
-Package: h3
+Package: h3cr
 Title: R bindings for H3
 Version: 0.0.0.9000
 Authors@R: person("Stefan","Kuethe", role = c("aut", "cre"), email = "crazycapivara@gmail.com")
