@@ -15,4 +15,3 @@ before_install:
   - popd
   - rm -rf h3c
   - ls /usr/local/lib/
-  - sudo ldconfig
