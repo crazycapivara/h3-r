@@ -6,8 +6,6 @@ latex: false
 cache: packages
 
 before_install:
-  - sudo apt-get --yes --force-yes update -qq
-  - sudo apt-get install --yes cmake make gcc libtool
   - git clone https://github.com/uber/h3.git h3c
   - pushd h3c
   - cmake -DENABLE_FORMAT=OFF -DBUILD_SHARED_LIBS=ON .
