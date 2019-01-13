@@ -15,7 +15,7 @@ before_install:
   - popd
   - rm -rf h3c
   - ls /usr/local/lib/
-  # - sudo install_name_tool -add_rpath /usr/local/lib/libh3.dylib libh3.dylib
+  - sudo install_name_tool -add_rpath libh3.dylib /usr/local/lib/libh3.dylib
   # - sudo update_dyld_shared_cache
 
-script: R -q -e 'devtools::install()'
+# script: R -q -e 'devtools::install()'
