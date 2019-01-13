@@ -1,2 +1,2 @@
 PKG_LIBS=-L/usr/local/lib -lh3
-CXX=clang++
+# CXX=clang++
