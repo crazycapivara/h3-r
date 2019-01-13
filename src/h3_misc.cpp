@@ -11,7 +11,7 @@ using namespace Rcpp;
 NumericVector num_hexagons(NumericVector res) {
   int n = res.size();
   NumericVector z(n);
-  for (int i; i < n; ++i) {
+  for (int i = 0; i < n; ++i) {
     z[i] = numHexagons(res[i]);
   }
 
