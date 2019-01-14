@@ -1,5 +1,6 @@
 PKG_LDFLAGS=/usr/local/lib
-PKG_LIBS=-L/usr/local/lib -lh3
+PKG_LIBS=-L$(PKG_LDFLAGS) -lh3 -Wl,-rpath,$(PKG_LDFLAGS)
+#PKG_LIBS=-L/usr/local/lib -lh3
 # CXX=clang++
 # CXX_STD=CXX11
 
