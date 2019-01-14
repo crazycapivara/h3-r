@@ -5,7 +5,13 @@ sudo: true
 latex: false
 cache: packages
 
-os: osx
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+    - os: osx
+
+# os: osx
 
 before_install:
   - git clone https://github.com/uber/h3.git h3c
