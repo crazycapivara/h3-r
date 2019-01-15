@@ -38,3 +38,28 @@ CharacterVector geo_to_h3(NumericMatrix latlng, int res) {
 
   return z;
 }
+
+NumericMatrix rcpp_h3_to_geo_boundary(String h3s) {
+  uint64_t h3 = stringToH3(h3s.get_cstring());
+  GeoBoundary geoBoundary;
+  h3ToGeoBoundary(h3, &geoBoundary);
+  NumericMatrix m(geoBoundary.numVerts, 2);
+  for (int i = 0; i < geoBoundary.numVerts; ++i) {
+    m(i, 0) = radsToDegs(geoBoundary.verts[i].lat);
+    m(i, 1) = radsToDegs(geoBoundary.verts[i].lon);
+  }
+
+  return m;
+}
+
+//' @export
+// [[Rcpp::export]]
+List rcpp_h3_to_geo_boundary(CharacterVector h3s) {
+  int n = h3s.size();
+  List z(n);
+  for (int i = 0; i < n; ++i) {
+    z[i] = rcpp_h3_to_geo_boundary(h3s[i]);
+  }
+
+  return z;
+}

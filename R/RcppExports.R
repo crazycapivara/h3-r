@@ -6,6 +6,11 @@ geo_to_h3 <- function(latlng, res) {
     .Call(`_h3_geo_to_h3`, latlng, res)
 }
 
+#' @export
+rcpp_h3_to_geo_boundary <- function(h3s) {
+    .Call(`_h3_rcpp_h3_to_geo_boundary`, h3s)
+}
+
 #' Number of unique H3 indexes at the given resolution.
 #' @param res numeric vector; resolution between 0 and 15
 #' @return numeric vector
