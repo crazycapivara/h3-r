@@ -1,0 +1,20 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+sudo: true
+latex: false
+cache: packages
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+    - os: osx
+
+before_install:
+  - git clone https://github.com/uber/h3.git h3c
+  - pushd h3c
+  - cmake -DENABLE_FORMAT=OFF -DBUILD_SHARED_LIBS=ON .
+  - sudo make install
+  - popd
+  - rm -rf h3c
