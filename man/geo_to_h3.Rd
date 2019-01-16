@@ -23,6 +23,9 @@ geo_to_h3(latlng, res)
 
 \item{res}{resolution; between 0 and 15}
 }
+\value{
+character vector
+}
 \description{
 Index geo-coordinates at the resolution into h3 addresses
 }
