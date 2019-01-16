@@ -11,6 +11,9 @@ matrix:
       dist: trusty
     - os: osx
 
+r_binary_packages:
+  - sf
+
 before_install:
   - git clone https://github.com/uber/h3.git h3c
   - pushd h3c
