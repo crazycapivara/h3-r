@@ -14,6 +14,11 @@ geo_to_h3.matrix <- function(latlng, res = 7) {
 }
 
 #' @export
+geo_to_h3.sf <- function(latlng, res = 7) {
+  sf::st_coordinates(latlng)[, 2:1] %>% rcpp_geo_to_h3(res)
+}
+
+#' @export
 h3_to_geo_boundary_sf <- function(h3index) {
   rcpp_h3_to_geo_boundary(h3index) %>%
     geo_boundary_to_sf()
