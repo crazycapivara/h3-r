@@ -4,10 +4,10 @@
 \alias{h3_to_geo_boundary_sf}
 \title{Get the polygons of the given H3 indexes}
 \usage{
-h3_to_geo_boundary_sf(h3index)
+h3_to_geo_boundary_sf(h3_index)
 }
 \arguments{
-\item{h3index}{character vector of H3 indexes}
+\item{h3_index}{character vector of H3 indexes}
 }
 \value{
 object of class \code{sf}

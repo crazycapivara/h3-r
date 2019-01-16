@@ -51,7 +51,6 @@ NumericMatrix rcpp_h3_to_geo_boundary(String h3s) {
   return m;
 }
 
-//' @export
 // [[Rcpp::export]]
 List rcpp_h3_to_geo_boundary(CharacterVector h3s) {
   int n = h3s.size();

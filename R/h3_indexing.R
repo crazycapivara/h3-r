@@ -32,11 +32,19 @@ geo_to_h3.sf <- function(latlng, res = 7) {
   sf::st_coordinates(latlng)[, 2:1] %>% rcpp_geo_to_h3(res)
 }
 
+#' Get the vertices of the given H3 indexes
+#' @param h3_index character vector of H3 indexes
+#' @return list of matrices with geo coordinates as lat/lng pairs
+#' @export
+h3_to_geo_boundary <- function(h3_index) {
+  rcpp_h3_to_geo_boundary(h3_index)
+}
+
 #' Get the polygons of the given H3 indexes
-#' @param h3index character vector of H3 indexes
+#' @param h3_index character vector of H3 indexes
 #' @return object of class \code{sf}
 #' @export
-h3_to_geo_boundary_sf <- function(h3index) {
-  rcpp_h3_to_geo_boundary(h3index) %>%
+h3_to_geo_boundary_sf <- function(h3_index) {
+  rcpp_h3_to_geo_boundary(h3_index) %>%
     geo_boundary_to_sf()
 }
