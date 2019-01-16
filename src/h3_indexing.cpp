@@ -21,9 +21,8 @@ double mercatorLng(double lng) {
   return lng;
 }
 
-//' @export
 // [[Rcpp::export]]
-CharacterVector geo_to_h3(NumericMatrix latlng, int res) {
+CharacterVector rcpp_geo_to_h3(NumericMatrix latlng, int res) {
   int n = latlng.nrow();
   CharacterVector z(n);
   for (int i = 0; i < n; ++i) {

@@ -5,15 +5,15 @@
 
 using namespace Rcpp;
 
-// geo_to_h3
-CharacterVector geo_to_h3(NumericMatrix latlng, int res);
-RcppExport SEXP _h3_geo_to_h3(SEXP latlngSEXP, SEXP resSEXP) {
+// rcpp_geo_to_h3
+CharacterVector rcpp_geo_to_h3(NumericMatrix latlng, int res);
+RcppExport SEXP _h3_rcpp_geo_to_h3(SEXP latlngSEXP, SEXP resSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericMatrix >::type latlng(latlngSEXP);
     Rcpp::traits::input_parameter< int >::type res(resSEXP);
-    rcpp_result_gen = Rcpp::wrap(geo_to_h3(latlng, res));
+    rcpp_result_gen = Rcpp::wrap(rcpp_geo_to_h3(latlng, res));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -41,7 +41,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_h3_geo_to_h3", (DL_FUNC) &_h3_geo_to_h3, 2},
+    {"_h3_rcpp_geo_to_h3", (DL_FUNC) &_h3_rcpp_geo_to_h3, 2},
     {"_h3_rcpp_h3_to_geo_boundary", (DL_FUNC) &_h3_rcpp_h3_to_geo_boundary, 1},
     {"_h3_num_hexagons", (DL_FUNC) &_h3_num_hexagons, 1},
     {NULL, NULL, 0}
