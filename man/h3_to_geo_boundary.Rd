@@ -2,7 +2,7 @@
 % Please edit documentation in R/h3_indexing.R
 \name{h3_to_geo_boundary}
 \alias{h3_to_geo_boundary}
-\title{Get the vertices of the given H3 indexes}
+\title{Get the vertices of the given H3 indexes.}
 \usage{
 h3_to_geo_boundary(h3_index)
 }
@@ -10,8 +10,8 @@ h3_to_geo_boundary(h3_index)
 \item{h3_index}{character vector of H3 indexes}
 }
 \value{
-list of matrices with geo coordinates as lat/lng pairs
+list of matrices with geo-coordinates as lat/lng pairs for each H3 index
 }
 \description{
-Get the vertices of the given H3 indexes
+Get the vertices of the given H3 indexes.
 }

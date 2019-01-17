@@ -6,7 +6,7 @@
 \alias{geo_to_h3.matrix}
 \alias{geo_to_h3.data.frame}
 \alias{geo_to_h3.sf}
-\title{Index geo-coordinates at the resolution into h3 addresses}
+\title{Index geo-coordinates at the given resolution into H3 addresses.}
 \usage{
 geo_to_h3(latlng, res)
 
@@ -19,13 +19,13 @@ geo_to_h3(latlng, res)
 \method{geo_to_h3}{sf}(latlng, res = 7)
 }
 \arguments{
-\item{latlng}{geo coordinates as lat/lng pairs or object of class \code{sf}}
+\item{latlng}{geo-coordinates as lat/lng pairs or object of class \code{sf}}
 
-\item{res}{resolution; between 0 and 15}
+\item{res}{resolution between 0 and 15}
 }
 \value{
 character vector
 }
 \description{
-Index geo-coordinates at the resolution into h3 addresses
+Index geo-coordinates at the given resolution into H3 addresses.
 }

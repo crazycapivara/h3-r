@@ -8,7 +8,7 @@ make_sf <- function(polygons) {
     sf::st_sf()
 }
 
-#' Parse geo boundaries to object of class \code{sf}
+#' Parse geo-boundaries to object of class \code{sf}.
 #' @param latlng geo coordinates
 #' @name geo_boundary_to_sf
 #' @export
