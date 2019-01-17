@@ -38,6 +38,15 @@ CharacterVector rcpp_geo_to_h3(NumericMatrix latlng, int res) {
   return z;
 }
 
+// [[Rcpp::export]]
+NumericVector rcpp_h3_to_geo(String h3s) {
+  uint64_t h3 = stringToH3(h3s.get_cstring());
+  GeoCoord geoCoord;
+  h3ToGeo(h3, &geoCoord);
+  return NumericVector::create(
+    radsToDegs(geoCoord.lat), radsToDegs(geoCoord.lon));
+}
+
 NumericMatrix rcpp_h3_to_geo_boundary(String h3s) {
   uint64_t h3 = stringToH3(h3s.get_cstring());
   GeoBoundary geoBoundary;
