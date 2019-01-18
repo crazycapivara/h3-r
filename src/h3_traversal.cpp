@@ -4,7 +4,6 @@
 
 using namespace Rcpp;
 
-//' @export
 // [[Rcpp::export]]
 CharacterVector rcpp_k_ring(String h3s, int radius) {
   H3Index h3 = stringToH3(h3s.get_cstring());
