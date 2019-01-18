@@ -5,12 +5,12 @@ H3-R
 
 [![Travis build status](https://travis-ci.org/crazycapivara/h3-r.svg?branch=master)](https://travis-ci.org/crazycapivara/h3-r) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![H3 Version](https://img.shields.io/badge/h3-v3.3.0-blue.svg)](https://github.com/uber/h3/releases/tag/v3.3.0)
 
-Provides R bindungs to [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
+Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
 
 Notes
 -----
 
-Succesfully build on
+Succesfully built on
 
 -   Linux
 -   OSX
@@ -101,7 +101,7 @@ radius <- 1
 #> [5] "872834776ffffff" "872834729ffffff" "872834728ffffff"
 
 h3_to_geo_boundary_sf(neighbors) %>%
-  sf::st_geometry() %>% plot()
+  sf::st_geometry() %>% plot(col = "blue")
 ```
 
 <img src="man/figures/README-h3-algorithms-1.png" width="400px" />
