@@ -1,4 +1,4 @@
-#include <malloc.h>
+#include <stdlib.h>
 #include <Rcpp.h>
 #include <h3/h3api.h>
 
