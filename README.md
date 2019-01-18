@@ -104,4 +104,4 @@ h3_to_geo_boundary_sf(neighbors) %>%
   sf::st_geometry() %>% plot()
 ```
 
-<img src="man/figures/README-h3-algorithms-1.png" width="100%" />
+<img src="man/figures/README-h3-algorithms-1.png" width="400px" />
