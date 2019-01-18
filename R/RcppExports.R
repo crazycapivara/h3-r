@@ -21,3 +21,8 @@ num_hexagons <- function(res) {
     .Call(`_h3_num_hexagons`, res)
 }
 
+#' @export
+rcpp_k_ring <- function(h3s, radius) {
+    .Call(`_h3_rcpp_k_ring`, h3s, radius)
+}
+
