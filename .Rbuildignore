@@ -2,3 +2,4 @@
 ^\.travis\.yml$
 ^h3\.Rproj$
 ^\.Rproj\.user$
+^install-h3\.sh$
