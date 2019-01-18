@@ -14,17 +14,53 @@ knitr::opts_chunk$set(
 ```
 # H3-R
 
-[![Travis build status](https://travis-ci.org/crazycapivara/h3-r.svg?branch=master)](https://travis-ci.org/crazycapivara/h3-r) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Travis build status](https://travis-ci.org/crazycapivara/h3-r.svg?branch=master)](https://travis-ci.org/crazycapivara/h3-r)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![H3 Version](https://img.shields.io/badge/h3-v3.3.0-blue.svg)](https://github.com/uber/h3/releases/tag/v3.3.0)
 
 Provides R bindungs to [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
 
 ## Installation
 
-First of all you need to build the [H3 C library](https://github.com/uber/h3) from source. Therefore, you need a _C compiler_, _CMake_ and _Make_. For building on Linux and OSX take a look at the commands in the `before_install` section in [.travis.yml](.travis.yml). 
+First of all you need to build the [H3 C library](https://github.com/uber/h3) from source. Therefore, you need a C compiler, `cmake` and `make`. For building on Linux and OSX take a look at the commands in the `before_install` section in [.travis.yml](.travis.yml). 
 
 Then you can install h3 from github with:
 
-``` r
+```{r installation, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("crazycapivara/h3-r")
+```
+
+## Usage
+
+Core functions:
+
+```{r h3-core}
+library(h3)
+
+coords <- c(37.3615593, -122.0553238)
+resolution <- 7
+
+# Convert a lat/lng point to a hexagon index at resolution 7
+(h3_index <- geo_to_h3(coords, resolution)) 
+
+# Get the center of the hexagon
+h3_to_geo_sf(h3_index)
+
+# Get the vertices of the hexagon
+h3_to_geo_boundary(h3_index)
+
+# Get the polygon of the hexagon
+h3_to_geo_boundary_sf(h3_index)
+```
+
+Useful algorithms:
+
+```{r h3-algorithms}
+# Get all neighbors within 1 step of the hexagon
+radius <- 1
+(neighbors <- k_ring(h3_index, radius))
+
+h3_to_geo_boundary_sf(neighbors) %>%
+  sf::st_geometry() %>% plot()
 ```
