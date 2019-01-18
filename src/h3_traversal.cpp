@@ -11,7 +11,7 @@ CharacterVector rcpp_k_ring(String h3s, int radius) {
   int n = maxKringSize(radius);
   H3Index* out = (H3Index*)calloc(n, sizeof(H3Index));
   kRing(h3, radius, out);
-  int counter;
+  int counter = 0;
   for (int i = 0; i < n; ++i) {
     if (out[i] != 0) {
       ++counter;
@@ -26,5 +26,16 @@ CharacterVector rcpp_k_ring(String h3s, int radius) {
   }
 
   free(out);
+  return z;
+}
+
+// use 'lapply' in R
+List rcpp_k_ring(StringVector h3s, int radius) {
+  int n = h3s.size();
+  List z(n);
+  for (int i = 0; i < n; ++i) {
+    z[i] = rcpp_k_ring(h3s[i], radius);
+  }
+
   return z;
 }
