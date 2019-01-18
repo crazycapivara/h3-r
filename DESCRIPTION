@@ -17,5 +17,6 @@ Imports:
   Rcpp,
   magrittr
 Suggests:
-  sf
+    sf,
+    testthat
 RoxygenNote: 6.1.0
