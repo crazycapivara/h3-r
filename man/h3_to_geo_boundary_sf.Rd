@@ -2,7 +2,7 @@
 % Please edit documentation in R/h3_indexing.R
 \name{h3_to_geo_boundary_sf}
 \alias{h3_to_geo_boundary_sf}
-\title{Get the polygons of the given H3 indexes.}
+\title{Get the polygons of the given H3 indexes as \code{sf} object.}
 \usage{
 h3_to_geo_boundary_sf(h3_index)
 }
@@ -13,5 +13,5 @@ h3_to_geo_boundary_sf(h3_index)
 object of class \code{sf}
 }
 \description{
-Get the polygons of the given H3 indexes.
+Get the polygons of the given H3 indexes as \code{sf} object.
 }

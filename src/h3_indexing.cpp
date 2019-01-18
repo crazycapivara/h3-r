@@ -39,12 +39,18 @@ CharacterVector rcpp_geo_to_h3(NumericMatrix latlng, int res) {
 }
 
 // [[Rcpp::export]]
-NumericVector rcpp_h3_to_geo(String h3s) {
-  uint64_t h3 = stringToH3(h3s.get_cstring());
-  GeoCoord geoCoord;
-  h3ToGeo(h3, &geoCoord);
-  return NumericVector::create(
-    radsToDegs(geoCoord.lat), radsToDegs(geoCoord.lon));
+NumericMatrix rcpp_h3_to_geo(CharacterVector h3s) {
+  int n = h3s.size();
+  NumericMatrix m(n, 2);
+  for (int i = 0; i < n; ++i) {
+    uint64_t h3 = stringToH3(h3s[i]);
+    GeoCoord geoCoord;
+    h3ToGeo(h3, &geoCoord);
+    m(i, 0) = radsToDegs(geoCoord.lat);
+    m(i, 1) = radsToDegs(geoCoord.lon);
+  }
+
+  return m;
 }
 
 NumericMatrix rcpp_h3_to_geo_boundary(String h3s) {

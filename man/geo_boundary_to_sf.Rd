@@ -13,7 +13,7 @@ geo_boundary_to_sf(latlng)
 \method{geo_boundary_to_sf}{list}(latlng)
 }
 \arguments{
-\item{latlng}{geo coordinates}
+\item{latlng}{geo-coordinates}
 }
 \description{
 Parse geo-boundaries to object of class \code{sf}.

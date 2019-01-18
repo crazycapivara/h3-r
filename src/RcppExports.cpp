@@ -18,12 +18,12 @@ BEGIN_RCPP
 END_RCPP
 }
 // rcpp_h3_to_geo
-NumericVector rcpp_h3_to_geo(String h3s);
+NumericMatrix rcpp_h3_to_geo(CharacterVector h3s);
 RcppExport SEXP _h3_rcpp_h3_to_geo(SEXP h3sSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< String >::type h3s(h3sSEXP);
+    Rcpp::traits::input_parameter< CharacterVector >::type h3s(h3sSEXP);
     rcpp_result_gen = Rcpp::wrap(rcpp_h3_to_geo(h3s));
     return rcpp_result_gen;
 END_RCPP
