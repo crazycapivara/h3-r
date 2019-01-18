@@ -7,12 +7,35 @@ H3-R
 
 Provides R bindungs to [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
 
+Notes
+-----
+
+Succesfully build on
+
+-   Linux
+-   OSX
+
+Requirements
+------------
+
+First of all you need to build the [H3 C library](https://github.com/uber/h3) from source. Therefore, you need a C compiler, `cmake` and `make`.
+
+Then you can run:
+
+``` bash
+git clone https://github.com/crazycapivara/h3-r.git
+pushd h3-r
+chmod +x install-h3c.sh
+./install-h3c.sh
+# R -q -e 'devtools::install()'
+popd
+rm -rf h3-r
+```
+
 Installation
 ------------
 
-First of all you need to build the [H3 C library](https://github.com/uber/h3) from source. Therefore, you need a C compiler, `cmake` and `make`. For building on Linux and OSX take a look at the commands in the `before_install` section in [.travis.yml](.travis.yml).
-
-Then you can install h3 from github with:
+You can install h3 from github with:
 
 ``` r
 # install.packages("devtools")
