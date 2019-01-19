@@ -15,6 +15,8 @@ Succesfully built on
 -   Linux
 -   OSX
 
+If you cannot build the C library you might check [crazycapivara/h3forr](https://github.com/crazycapivara/h3forr) providing bindings via [V8](https://github.com/jeroen/V8) and [h3-js](https://github.com/uber/h3-js).
+
 Requirements
 ------------
 
