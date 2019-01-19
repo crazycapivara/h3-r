@@ -50,6 +50,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// hex_area
+NumericVector hex_area(NumericVector res, String unit);
+RcppExport SEXP _h3_hex_area(SEXP resSEXP, SEXP unitSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type res(resSEXP);
+    Rcpp::traits::input_parameter< String >::type unit(unitSEXP);
+    rcpp_result_gen = Rcpp::wrap(hex_area(res, unit));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_k_ring
 CharacterVector rcpp_k_ring(String h3s, int radius);
 RcppExport SEXP _h3_rcpp_k_ring(SEXP h3sSEXP, SEXP radiusSEXP) {
@@ -92,6 +104,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_h3_rcpp_h3_to_geo", (DL_FUNC) &_h3_rcpp_h3_to_geo, 1},
     {"_h3_rcpp_h3_to_geo_boundary", (DL_FUNC) &_h3_rcpp_h3_to_geo_boundary, 1},
     {"_h3_num_hexagons", (DL_FUNC) &_h3_num_hexagons, 1},
+    {"_h3_hex_area", (DL_FUNC) &_h3_hex_area, 2},
     {"_h3_rcpp_k_ring", (DL_FUNC) &_h3_rcpp_k_ring, 2},
     {"_h3_h3_distance", (DL_FUNC) &_h3_h3_distance, 2},
     {"_h3_rcpp_k_ring_distances", (DL_FUNC) &_h3_rcpp_k_ring_distances, 2},

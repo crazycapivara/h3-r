@@ -21,6 +21,15 @@ num_hexagons <- function(res) {
     .Call(`_h3_num_hexagons`, res)
 }
 
+#' Average hexagon area in square meters or kilometers at the given resolution.
+#' @param res resolution between 0 and 15
+#' @param unit either \code{m2} or \code{km2}
+#' @return numeric vector
+#' @export
+hex_area <- function(res, unit) {
+    .Call(`_h3_hex_area`, res, unit)
+}
+
 rcpp_k_ring <- function(h3s, radius) {
     .Call(`_h3_rcpp_k_ring`, h3s, radius)
 }
