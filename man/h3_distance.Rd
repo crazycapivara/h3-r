@@ -9,7 +9,7 @@ h3_distance(origin, destinations)
 \arguments{
 \item{origin}{character; origin H3 index}
 
-\item{destination}{character vector of H3 destination indexes}
+\item{destinations}{character vector of H3 destination indexes}
 }
 \value{
 numeric vector
