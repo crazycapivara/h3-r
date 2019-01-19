@@ -34,3 +34,7 @@ h3_distance <- function(origin, destinations) {
     .Call(`_h3_h3_distance`, origin, destinations)
 }
 
+rcpp_k_ring_distances <- function(h3s, radius) {
+    .Call(`_h3_rcpp_k_ring_distances`, h3s, radius)
+}
+
