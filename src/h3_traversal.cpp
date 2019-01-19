@@ -38,3 +38,20 @@ List rcpp_k_ring(StringVector h3s, int radius) {
 
   return z;
 }
+
+//' Get the grid distance between H3 addresses.
+//' @param origin character; origin H3 index
+//' @param destination character vector of H3 destination indexes
+//' @return numeric vector
+//' @export
+// [[Rcpp::export]]
+NumericVector h3_distance(String origin, CharacterVector destinations) {
+  int n = destinations.size();
+  NumericVector z(n);
+  H3Index h3Origin = stringToH3(origin.get_cstring());
+  for (int i = 0; i < n; ++i) {
+    z[i] = h3Distance(h3Origin, stringToH3(destinations[i]));
+  }
+
+  return z;
+}

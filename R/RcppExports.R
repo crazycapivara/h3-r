@@ -25,3 +25,12 @@ rcpp_k_ring <- function(h3s, radius) {
     .Call(`_h3_rcpp_k_ring`, h3s, radius)
 }
 
+#' Get the grid distance between H3 addresses.
+#' @param origin character; origin H3 index
+#' @param destination character vector of H3 destination indexes
+#' @return numeric vector
+#' @export
+h3_distance <- function(origin, destinations) {
+    .Call(`_h3_h3_distance`, origin, destinations)
+}
+

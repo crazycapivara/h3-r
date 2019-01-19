@@ -62,6 +62,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// h3_distance
+NumericVector h3_distance(String origin, CharacterVector destinations);
+RcppExport SEXP _h3_h3_distance(SEXP originSEXP, SEXP destinationsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type origin(originSEXP);
+    Rcpp::traits::input_parameter< CharacterVector >::type destinations(destinationsSEXP);
+    rcpp_result_gen = Rcpp::wrap(h3_distance(origin, destinations));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_h3_rcpp_geo_to_h3", (DL_FUNC) &_h3_rcpp_geo_to_h3, 2},
@@ -69,6 +81,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_h3_rcpp_h3_to_geo_boundary", (DL_FUNC) &_h3_rcpp_h3_to_geo_boundary, 1},
     {"_h3_num_hexagons", (DL_FUNC) &_h3_num_hexagons, 1},
     {"_h3_rcpp_k_ring", (DL_FUNC) &_h3_rcpp_k_ring, 2},
+    {"_h3_h3_distance", (DL_FUNC) &_h3_h3_distance, 2},
     {NULL, NULL, 0}
 };
 
