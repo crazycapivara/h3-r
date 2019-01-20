@@ -15,7 +15,8 @@ LinkingTo:
   Rcpp
 Imports:
   Rcpp,
-  magrittr
+  magrittr,
+  tibble
 Suggests:
     sf,
     testthat
