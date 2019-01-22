@@ -5,27 +5,27 @@
 
 using namespace Rcpp;
 
-// h3_to_parent
-CharacterVector h3_to_parent(String h3s, int res);
-RcppExport SEXP _h3_h3_to_parent(SEXP h3sSEXP, SEXP resSEXP) {
+// rcpp_h3_to_parent
+CharacterVector rcpp_h3_to_parent(String h3s, int res);
+RcppExport SEXP _h3_rcpp_h3_to_parent(SEXP h3sSEXP, SEXP resSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< String >::type h3s(h3sSEXP);
     Rcpp::traits::input_parameter< int >::type res(resSEXP);
-    rcpp_result_gen = Rcpp::wrap(h3_to_parent(h3s, res));
+    rcpp_result_gen = Rcpp::wrap(rcpp_h3_to_parent(h3s, res));
     return rcpp_result_gen;
 END_RCPP
 }
-// h3_to_children
-CharacterVector h3_to_children(String h3s, int res);
-RcppExport SEXP _h3_h3_to_children(SEXP h3sSEXP, SEXP resSEXP) {
+// rcpp_h3_to_children
+CharacterVector rcpp_h3_to_children(String h3s, int res);
+RcppExport SEXP _h3_rcpp_h3_to_children(SEXP h3sSEXP, SEXP resSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< String >::type h3s(h3sSEXP);
     Rcpp::traits::input_parameter< int >::type res(resSEXP);
-    rcpp_result_gen = Rcpp::wrap(h3_to_children(h3s, res));
+    rcpp_result_gen = Rcpp::wrap(rcpp_h3_to_children(h3s, res));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -124,8 +124,8 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_h3_h3_to_parent", (DL_FUNC) &_h3_h3_to_parent, 2},
-    {"_h3_h3_to_children", (DL_FUNC) &_h3_h3_to_children, 2},
+    {"_h3_rcpp_h3_to_parent", (DL_FUNC) &_h3_rcpp_h3_to_parent, 2},
+    {"_h3_rcpp_h3_to_children", (DL_FUNC) &_h3_rcpp_h3_to_children, 2},
     {"_h3_rcpp_geo_to_h3", (DL_FUNC) &_h3_rcpp_geo_to_h3, 2},
     {"_h3_rcpp_h3_to_geo", (DL_FUNC) &_h3_rcpp_h3_to_geo, 1},
     {"_h3_rcpp_h3_to_geo_boundary", (DL_FUNC) &_h3_rcpp_h3_to_geo_boundary, 1},
