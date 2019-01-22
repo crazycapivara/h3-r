@@ -29,7 +29,7 @@ geo_to_h3.data.frame <- function(latlng, res = 7) {
 #' @name geo_to_h3
 #' @export
 geo_to_h3.sf <- function(latlng, res = 7) {
-  sf::st_coordinates(latlng)[, 2:1] %>% rcpp_geo_to_h3(res)
+  sf::st_coordinates(latlng)[, 2:1] %>% geo_to_h3(res) # %>% rcpp_geo_to_h3(res)
 }
 
 #' Get the centers of the given H3 indexes.
