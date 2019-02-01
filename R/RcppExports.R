@@ -21,6 +21,14 @@ rcpp_h3_to_geo_boundary <- function(h3s) {
     .Call(`_h3_rcpp_h3_to_geo_boundary`, h3s)
 }
 
+#' Get the resolution of the given H3 indexes.
+#' @param h3Str character vector of H3 indexes
+#' @return numeric vector
+#' @export
+h3_get_resolution <- function(h3Str) {
+    .Call(`_h3_h3_get_resolution`, h3Str)
+}
+
 #' Number of unique H3 indexes at the given resolution.
 #' @param res numeric vector; resolution between 0 and 15
 #' @return numeric vector
