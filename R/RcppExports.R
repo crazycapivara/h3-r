@@ -37,6 +37,14 @@ h3_is_valid <- function(h3Str) {
     .Call(`_h3_h3_is_valid`, h3Str)
 }
 
+#' Get the base cells of the given H3 indexes.
+#' @param h3Str character vector of H3 indexes
+#' @return numeric vector; base cell numbers between 0 and 121
+#' @export
+h3_get_base_cell <- function(h3Str) {
+    .Call(`_h3_h3_get_base_cell`, h3Str)
+}
+
 #' Number of unique H3 indexes at the given resolution.
 #' @param res numeric vector; resolution between 0 and 15
 #' @return numeric vector
