@@ -29,6 +29,14 @@ h3_get_resolution <- function(h3Str) {
     .Call(`_h3_h3_get_resolution`, h3Str)
 }
 
+#' Check whether the given H3 indexes are valid.
+#' @param h3Str character vector of H3 indexes
+#' @return logical vector
+#' @export
+h3_is_valid <- function(h3Str) {
+    .Call(`_h3_h3_is_valid`, h3Str)
+}
+
 #' Number of unique H3 indexes at the given resolution.
 #' @param res numeric vector; resolution between 0 and 15
 #' @return numeric vector
