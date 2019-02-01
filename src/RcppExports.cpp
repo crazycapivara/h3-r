@@ -63,6 +63,39 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// h3_get_resolution
+NumericVector h3_get_resolution(CharacterVector h3Str);
+RcppExport SEXP _h3_h3_get_resolution(SEXP h3StrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< CharacterVector >::type h3Str(h3StrSEXP);
+    rcpp_result_gen = Rcpp::wrap(h3_get_resolution(h3Str));
+    return rcpp_result_gen;
+END_RCPP
+}
+// h3_is_valid
+LogicalVector h3_is_valid(CharacterVector h3Str);
+RcppExport SEXP _h3_h3_is_valid(SEXP h3StrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< CharacterVector >::type h3Str(h3StrSEXP);
+    rcpp_result_gen = Rcpp::wrap(h3_is_valid(h3Str));
+    return rcpp_result_gen;
+END_RCPP
+}
+// h3_get_base_cell
+NumericVector h3_get_base_cell(CharacterVector h3Str);
+RcppExport SEXP _h3_h3_get_base_cell(SEXP h3StrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< CharacterVector >::type h3Str(h3StrSEXP);
+    rcpp_result_gen = Rcpp::wrap(h3_get_base_cell(h3Str));
+    return rcpp_result_gen;
+END_RCPP
+}
 // num_hexagons
 NumericVector num_hexagons(NumericVector res);
 RcppExport SEXP _h3_num_hexagons(SEXP resSEXP) {
@@ -129,6 +162,9 @@ static const R_CallMethodDef CallEntries[] = {
     {"_h3_rcpp_geo_to_h3", (DL_FUNC) &_h3_rcpp_geo_to_h3, 2},
     {"_h3_rcpp_h3_to_geo", (DL_FUNC) &_h3_rcpp_h3_to_geo, 1},
     {"_h3_rcpp_h3_to_geo_boundary", (DL_FUNC) &_h3_rcpp_h3_to_geo_boundary, 1},
+    {"_h3_h3_get_resolution", (DL_FUNC) &_h3_h3_get_resolution, 1},
+    {"_h3_h3_is_valid", (DL_FUNC) &_h3_h3_is_valid, 1},
+    {"_h3_h3_get_base_cell", (DL_FUNC) &_h3_h3_get_base_cell, 1},
     {"_h3_num_hexagons", (DL_FUNC) &_h3_num_hexagons, 1},
     {"_h3_hex_area", (DL_FUNC) &_h3_hex_area, 2},
     {"_h3_rcpp_k_ring", (DL_FUNC) &_h3_rcpp_k_ring, 2},
