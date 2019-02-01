@@ -107,3 +107,11 @@ h3_to_geo_boundary_sf(neighbors) %>%
 ```
 
 <img src="man/figures/README-h3-algorithms-1.png" width="400px" />
+
+``` r
+
+h3_set_to_multi_polygon(neighbors) %>%
+  sf::st_geometry() %>% plot(col = "green")
+```
+
+<img src="man/figures/README-h3-algorithms-2.png" width="400px" />

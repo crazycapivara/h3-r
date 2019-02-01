@@ -86,4 +86,7 @@ radius <- 1
 
 h3_to_geo_boundary_sf(neighbors) %>%
   sf::st_geometry() %>% plot(col = "blue")
+
+h3_set_to_multi_polygon(neighbors) %>%
+  sf::st_geometry() %>% plot(col = "green")
 ```
