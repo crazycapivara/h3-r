@@ -29,3 +29,7 @@ character vector
 \description{
 Index geo-coordinates at the given resolution into H3 addresses.
 }
+\examples{
+road_safety_greater_manchester[1:3, ] \%>\%
+  geo_to_h3()
+}

@@ -20,3 +20,11 @@ Get all hexagons in a k-ring around the given center.
 \note{
 The order of the hexagons is undefined.
 }
+\examples{
+road_safety_greater_manchester[1, ] \%>\%
+  geo_to_h3() \%>\%
+  k_ring() \%>\%
+  h3_to_geo_boundary_sf() \%>\%
+  sf::st_geometry() \%>\%
+  plot(col = "blue")
+}

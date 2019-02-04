@@ -2,6 +2,7 @@
 #' @param latlng geo-coordinates as lat/lng pairs or object of class \code{sf}
 #' @param res resolution between 0 and 15
 #' @return character vector
+#' @example inst/examples/api-reference/geo-to-h3.R
 #' @name geo_to_h3
 #' @export
 geo_to_h3 <- function(latlng, res) {
@@ -34,6 +35,7 @@ geo_to_h3.sf <- function(latlng, res = 7) {
 
 #' Get the centers of the given H3 indexes.
 #' @param h3_index character vector of H3 indexes
+#' @example inst/examples/api-reference/h3-to-geo.R
 #' @export
 h3_to_geo <- function(h3_index) {
   rcpp_h3_to_geo(h3_index)
@@ -41,6 +43,7 @@ h3_to_geo <- function(h3_index) {
 
 #' Get the centers of the given H3 indexes as \code{sf} object.
 #' @inheritParams h3_to_geo
+#' @example inst/examples/api-reference/h3-to-geo-sf.R
 #' @export
 h3_to_geo_sf <- function(h3_index) {
   rcpp_h3_to_geo(h3_index) %>%
@@ -58,6 +61,7 @@ h3_to_geo_boundary <- function(h3_index) {
 #' Get the polygons of the given H3 indexes as \code{sf} object.
 #' @param h3_index character vector of H3 indexes
 #' @return object of class \code{sf}
+#' @example inst/examples/api-reference/h3-to-geo-boundary-sf.R
 #' @export
 h3_to_geo_boundary_sf <- function(h3_index) {
   rcpp_h3_to_geo_boundary(h3_index) %>%

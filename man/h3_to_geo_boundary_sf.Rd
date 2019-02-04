@@ -15,3 +15,8 @@ object of class \code{sf}
 \description{
 Get the polygons of the given H3 indexes as \code{sf} object.
 }
+\examples{
+road_safety_greater_manchester[1:3, ] \%>\%
+  geo_to_h3() \%>\%
+  h3_to_geo_boundary_sf()
+}

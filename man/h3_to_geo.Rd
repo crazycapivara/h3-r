@@ -12,3 +12,8 @@ h3_to_geo(h3_index)
 \description{
 Get the centers of the given H3 indexes.
 }
+\examples{
+road_safety_greater_manchester[1:3, ] \%>\%
+  geo_to_h3() \%>\%
+  h3_to_geo()
+}
