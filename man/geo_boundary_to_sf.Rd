@@ -4,7 +4,7 @@
 \alias{geo_boundary_to_sf}
 \alias{geo_boundary_to_sf.matrix}
 \alias{geo_boundary_to_sf.list}
-\title{Parse geo-boundaries to object of class \code{sf}.}
+\title{Parse geo-boundaries to \code{sf} object.}
 \usage{
 geo_boundary_to_sf(latlng)
 
@@ -16,5 +16,5 @@ geo_boundary_to_sf(latlng)
 \item{latlng}{geo-coordinates}
 }
 \description{
-Parse geo-boundaries to object of class \code{sf}.
+Parse geo-boundaries to \code{sf} object.
 }

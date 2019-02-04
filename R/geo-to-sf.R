@@ -1,4 +1,4 @@
-#' #' Parse centers/geo-coordinates to object of class \code{sf}.
+#' Parse centers / geo-coordinates to \code{sf} object.
 #' @param latlng geo-coordinates
 #' @name geo_to_sf
 #' @export

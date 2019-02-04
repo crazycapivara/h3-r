@@ -3,7 +3,7 @@
 \name{geo_to_sf}
 \alias{geo_to_sf}
 \alias{geo_to_sf.matrix}
-\title{#' Parse centers/geo-coordinates to object of class \code{sf}.}
+\title{Parse centers / geo-coordinates to \code{sf} object.}
 \usage{
 geo_to_sf(latlng)
 
@@ -13,5 +13,5 @@ geo_to_sf(latlng)
 \item{latlng}{geo-coordinates}
 }
 \description{
-#' Parse centers/geo-coordinates to object of class \code{sf}.
+Parse centers / geo-coordinates to \code{sf} object.
 }
