@@ -3,6 +3,7 @@
 #' @inheritParams h3_to_geo
 #' @param radius number of rings around the given center
 #' @return character vector of H3 indexes
+#' @example inst/examples/api-reference/k-ring.R
 #' @export
 k_ring <- function(h3_index, radius = 1) {
   rcpp_k_ring(h3_index, radius)
