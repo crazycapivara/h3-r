@@ -7,6 +7,12 @@ H3-R
 
 Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
 
+Documentation
+-------------
+
+-   [H3-R](https://crazycapivara.github.io/h3-r/)
+-   [H3](https://uber.github.io/h3/)
+
 Notes
 -----
 
