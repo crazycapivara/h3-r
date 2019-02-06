@@ -9,7 +9,8 @@ using namespace Rcpp;
 CharacterVector rcpp_k_ring(String h3s, int radius) {
   H3Index h3 = stringToH3(h3s.get_cstring());
   int n = maxKringSize(radius);
-  H3Index* out = (H3Index*)calloc(n, sizeof(H3Index));
+  // H3Index* out = (H3Index*)calloc(n, sizeof(H3Index));
+  H3Index* out = new H3Index[n];
   kRing(h3, radius, out);
   int counter = 0;
   for (int i = 0; i < n; ++i) {
@@ -25,7 +26,8 @@ CharacterVector rcpp_k_ring(String h3s, int radius) {
     z[i] = h3s;
   }
 
-  free(out);
+  // free(out);
+  delete[] out;
   return z;
 }
 
