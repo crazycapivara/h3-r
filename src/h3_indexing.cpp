@@ -64,6 +64,7 @@ NumericMatrix rcpp_h3_to_geo_boundary(String h3s) {
     m(i, 1) = radsToDegs(geoBoundary.verts[i].lon);
   }
 
+  colnames(m) = CharacterVector::create("lat", "lng");
   return m;
 }
 
