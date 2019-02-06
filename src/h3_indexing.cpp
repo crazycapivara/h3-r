@@ -50,6 +50,7 @@ NumericMatrix rcpp_h3_to_geo(CharacterVector h3s) {
     m(i, 1) = radsToDegs(geoCoord.lon);
   }
 
+  colnames(m) = CharacterVector::create("lat", "lng");
   return m;
 }
 
