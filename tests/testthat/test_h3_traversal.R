@@ -1,4 +1,4 @@
-context("traversal")
+context("H3 traversal")
 
 test_that("k ring", {
   # Prepare

@@ -97,3 +97,9 @@ h3_to_geo_boundary_sf(neighbors) %>%
 h3_set_to_multi_polygon(neighbors) %>%
   sf::st_geometry() %>% plot(col = "green")
 ```
+
+## Run tests
+
+```{r tests}
+devtools::test()
+```

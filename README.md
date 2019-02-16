@@ -123,3 +123,18 @@ h3_set_to_multi_polygon(neighbors) %>%
 ```
 
 <img src="man/figures/README-h3-algorithms-2.png" width="400px" />
+
+Run tests
+---------
+
+``` r
+devtools::test()
+#> Loading h3
+#> Testing h3
+#> H3 hierachy: ....
+#> H3 indexing: .....
+#> H3 misc: ..
+#> H3 traversal: .....
+#> 
+#> DONE ======================================================================
+```

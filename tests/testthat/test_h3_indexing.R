@@ -1,4 +1,4 @@
-context("indexing")
+context("H3 indexing")
 
 test_that("geo to H3", {
   # Prepare
