@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include <Rcpp.h>
 #include <h3/h3api.h>
 
@@ -63,8 +62,10 @@ NumericVector h3_distance(String origin, CharacterVector destinations) {
 List rcpp_k_ring_distances(String h3s, int radius) {
   H3Index h3 = stringToH3(h3s.get_cstring());
   int n = maxKringSize(radius);
-  H3Index* out = (H3Index*)calloc(n, sizeof(H3Index));
-  int* distances = (int*)calloc(n, sizeof(int));
+  // H3Index* out = (H3Index*)calloc(n, sizeof(H3Index));
+  H3Index* out = new H3Index[n];
+  // int* distances = (int*)calloc(n, sizeof(int));
+  int* distances = new int[n];
   kRingDistances(h3, radius, out, distances);
   int counter = 0;
   for (int i = 0; i < n; ++i) {
@@ -82,7 +83,9 @@ List rcpp_k_ring_distances(String h3s, int radius) {
     d[i] = distances[i];
   }
 
-  free(out);
-  free(distances);
+  // free(out);
+  delete[] out;
+  // free(distances);
+  delete[] distances;
   return List::create(z, d);
 }
