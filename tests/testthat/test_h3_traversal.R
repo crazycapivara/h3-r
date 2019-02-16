@@ -16,3 +16,17 @@ test_that("k ring", {
   expect_length(neighbors, 7)
   expect_equal(neighbors, expected_neighbors)
 })
+
+test_that("k ring distances", {
+  # Prepare
+  h3_index <- "87283472bffffff"
+  radius <- 2
+
+  # Act
+  neighbors <- k_ring_distances(h3_index, radius)
+
+  # Assert
+  expect_is(neighbors, "tbl")
+  expect_equal(unique(neighbors$distance), 0:2)
+  expect_length(neighbors$h3_index, 19)
+})
