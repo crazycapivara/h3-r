@@ -23,6 +23,8 @@ Suggests:
     sf,
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    leaflet,
+    dplyr
 RoxygenNote: 6.1.0
 VignetteBuilder: knitr

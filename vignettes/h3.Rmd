@@ -77,3 +77,32 @@ h3_indexes <- c("85291a6ffffffff", "85291a6bfffffff", "852834d3fffffff")
 h3_set_to_multi_polygon(h3_indexes) %>%
   sf::st_geometry() %>% plot(col = "blue")
 ```
+
+## Rendering Hexagons
+
+```{r}
+# Binning
+h3_index <- geo_to_h3(road_safety_greater_manchester)
+tbl <- table(h3_index) %>%
+  tibble::as_tibble()
+hexagons <- h3_to_geo_boundary_sf(tbl$h3_index) %>%
+  dplyr::mutate(index = tbl$h3_index, accidents = tbl$n)
+head(hexagons)
+
+# Rendering
+library(leaflet)
+
+pal <- colorBin("YlOrRd", domain = hexagons$accidents)
+
+map <- leaflet(data = hexagons, width = "100%") %>%
+  addProviderTiles("Stamen.Toner") %>%
+  addPolygons(
+    weight = 2,
+    color = "white",
+    fillColor = ~ pal(accidents),
+    fillOpacity = 0.8,
+    label = ~ sprintf("%i accidents (%s)", accidents, index)
+  )
+
+map
+```
