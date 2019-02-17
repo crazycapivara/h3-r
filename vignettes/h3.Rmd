@@ -25,6 +25,7 @@ res <- 9
 # Get the center of an H3 index as a lat/lng point
 h3_to_geo(h3_index)
 
+# Get the vertices of an H3 index as lat/lng points
 h3_to_geo_boundary(h3_index)
 ```
 
