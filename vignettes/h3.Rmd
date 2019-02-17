@@ -1,0 +1,109 @@
+---
+title: "Introduction to h3"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Get started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The package h3 provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
+
+See also [H3 Tutorial](https://beta.observablehq.com/@nrabinowitz/h3-tutorial-the-h3-js-library).
+
+## Core Functions
+
+```{r}
+library(h3)
+
+# Index a lat/lng point to an H3 index
+coords <- c(37.5, -122.5)
+res <- 9
+
+(h3_index <- geo_to_h3(coords, res))
+
+# Get the center of an H3 index as a lat/lng point
+h3_to_geo(h3_index)
+
+# Get the vertices of an H3 index as lat/lng points
+h3_to_geo_boundary(h3_index)
+```
+
+Usually functions are vectorized:
+
+```{r}
+(coords <- road_safety_greater_manchester[1:2, ])
+
+(h3_indexes <- geo_to_h3(coords, 8))
+
+h3_to_geo_boundary(h3_indexes)
+```
+
+If [sf](https://github.com/r-spatial/sf) is installed, you can get the polygons of H3 indexes like this:
+
+```{r}
+h3_to_geo_boundary_sf(h3_indexes)
+```
+
+## Hierachy
+
+```{r}
+# Get the children of an H3 index at the given (finer) resolution
+(res <- h3_get_resolution(h3_index) + 1)
+h3_to_children(h3_index, res)
+
+# Get the parent of an H3 index at the given (coarser) resolution
+(res <- h3_get_resolution(h3_index) - 1)
+h3_to_parent(h3_index, res)
+```
+
+## Traversal
+
+```{r}
+# Find all H3 indexes within a given distance from the origin (filled ring)
+radius <- 1
+k_ring(h3_index, radius)
+
+k_ring_distances(h3_index, radius = 2)
+
+# Get the distance in grid cells between two H3 indexes
+h3_distance("8928342e20fffff", "8928342e21bffff")
+```
+
+## Regions
+
+```{r}
+# Get the multipolygon (array of polygons) for a set of H3 indexes
+h3_indexes <- c("85291a6ffffffff", "85291a6bfffffff", "852834d3fffffff")
+h3_set_to_multi_polygon(h3_indexes) %>%
+  sf::st_geometry() %>% plot(col = "blue")
+```
+
+## Rendering Hexagons
+
+```{r}
+# Binning
+h3_index <- geo_to_h3(road_safety_greater_manchester)
+tbl <- table(h3_index) %>%
+  tibble::as_tibble()
+hexagons <- h3_to_geo_boundary_sf(tbl$h3_index) %>%
+  dplyr::mutate(index = tbl$h3_index, accidents = tbl$n)
+head(hexagons)
+
+# Rendering
+library(leaflet)
+
+pal <- colorBin("YlOrRd", domain = hexagons$accidents)
+
+map <- leaflet(data = hexagons, width = "100%") %>%
+  addProviderTiles("Stamen.Toner") %>%
+  addPolygons(
+    weight = 2,
+    color = "white",
+    fillColor = ~ pal(accidents),
+    fillOpacity = 0.8,
+    label = ~ sprintf("%i accidents (%s)", accidents, index)
+  )
+
+map
+```
