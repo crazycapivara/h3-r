@@ -34,8 +34,10 @@ Then you can run:
 git clone https://github.com/crazycapivara/h3-r.git
 pushd h3-r
 chmod +x install-h3c.sh
+# Install H3 C Library
 ./install-h3c.sh
-# R -q -e 'devtools::install()'
+# Install H3 for R
+R -q -e 'devtools::install()'
 popd
 rm -rf h3-r
 ```
@@ -79,7 +81,7 @@ h3_to_geo_sf(h3_index)
 # Get the vertices of the hexagon
 h3_to_geo_boundary(h3_index)
 #> [[1]]
-#>          [,1]      [,2]
+#>           lat       lng
 #> [1,] 37.34110 -122.0416
 #> [2,] 37.35290 -122.0340
 #> [3,] 37.36352 -122.0428
@@ -121,3 +123,18 @@ h3_set_to_multi_polygon(neighbors) %>%
 ```
 
 <img src="man/figures/README-h3-algorithms-2.png" width="400px" />
+
+Run tests
+---------
+
+``` r
+devtools::test()
+#> Loading h3
+#> Testing h3
+#> H3 hierachy: ....
+#> H3 indexing: .....
+#> H3 misc: ..
+#> H3 traversal: .....
+#> 
+#> DONE ======================================================================
+```

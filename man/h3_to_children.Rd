@@ -7,12 +7,12 @@
 h3_to_children(h3_index, res)
 }
 \arguments{
-\item{h3_index}{character vector of H3 indexes}
+\item{h3_index}{character scalar representing a valid H3 index}
 
 \item{res}{resolution of children}
 }
 \value{
-character
+character vector
 }
 \description{
 Get the children of the given hexagon at a particular resolution.
