@@ -21,5 +21,8 @@ Imports:
   tibble
 Suggests:
     sf,
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 RoxygenNote: 6.1.0
+VignetteBuilder: knitr
