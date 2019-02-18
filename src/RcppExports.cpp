@@ -29,6 +29,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rcpp_compact
+CharacterVector rcpp_compact(CharacterVector h3Str);
+RcppExport SEXP _h3_rcpp_compact(SEXP h3StrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< CharacterVector >::type h3Str(h3StrSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_compact(h3Str));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_geo_to_h3
 CharacterVector rcpp_geo_to_h3(NumericMatrix latlng, int res);
 RcppExport SEXP _h3_rcpp_geo_to_h3(SEXP latlngSEXP, SEXP resSEXP) {
@@ -171,6 +182,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_h3_rcpp_h3_to_parent", (DL_FUNC) &_h3_rcpp_h3_to_parent, 2},
     {"_h3_rcpp_h3_to_children", (DL_FUNC) &_h3_rcpp_h3_to_children, 2},
+    {"_h3_rcpp_compact", (DL_FUNC) &_h3_rcpp_compact, 1},
     {"_h3_rcpp_geo_to_h3", (DL_FUNC) &_h3_rcpp_geo_to_h3, 2},
     {"_h3_rcpp_h3_to_geo", (DL_FUNC) &_h3_rcpp_h3_to_geo, 1},
     {"_h3_rcpp_h3_to_geo_boundary", (DL_FUNC) &_h3_rcpp_h3_to_geo_boundary, 1},

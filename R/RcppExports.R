@@ -9,6 +9,10 @@ rcpp_h3_to_children <- function(h3s, res) {
     .Call(`_h3_rcpp_h3_to_children`, h3s, res)
 }
 
+rcpp_compact <- function(h3Str) {
+    .Call(`_h3_rcpp_compact`, h3Str)
+}
+
 rcpp_geo_to_h3 <- function(latlng, res) {
     .Call(`_h3_rcpp_geo_to_h3`, latlng, res)
 }

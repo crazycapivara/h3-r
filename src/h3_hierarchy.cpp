@@ -31,3 +31,33 @@ CharacterVector rcpp_h3_to_children(String h3s, int res) {
   delete[] h3Children;
   return z;
 }
+
+// [[Rcpp::export]]
+CharacterVector rcpp_compact(CharacterVector h3Str) {
+  int n = h3Str.size();
+  H3Index* input = new H3Index[n];
+  for (int i = 0; i < n; ++i) {
+    H3Index h3 = stringToH3(h3Str[i]);
+    input[i] = h3;
+  }
+
+  H3Index* compacted = new H3Index[n]();
+  int err = compact(input, compacted, n);
+  int compactCounter = 0;
+  for (int i = 0; i < n; ++i) {
+    if (compacted[i] != 0) {
+      compactCounter++;
+    }
+  }
+
+  CharacterVector z(compactCounter);
+  for (int i = 0; i < compactCounter; ++i) {
+    char compactedStr[17];
+    h3ToString(compacted[i], compactedStr, sizeof(compactedStr));
+    z[i] = compactedStr;
+  }
+
+  delete[] input;
+  delete[] compacted;
+  return z;
+}
