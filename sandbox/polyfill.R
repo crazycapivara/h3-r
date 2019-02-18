@@ -16,7 +16,7 @@ st_geometry(resultp) %>% plot()
 st_geometry(p) %>% plot(add = TRUE)
 
 polyfill <- function(polygon, res = 7) {
-  bbox <- sf::st_bbox(polygon)
+  bbox <- sf::st_bbox(sf::st_geometry(polygon))
   root <- sf::st_centroid(polygon) %>% geo_to_h3(res)
   target1 <- bbox[c("ymin", "xmin")] %>% geo_to_h3(res)
   target2 <- bbox[c("ymax", "xmax")] %>% geo_to_h3(res)
@@ -25,5 +25,5 @@ polyfill <- function(polygon, res = 7) {
   h3_indexes <- k_ring(root, radius)
   points <- h3_to_geo_sf(h3_indexes)
   points$h3 <- h3_indexes
-  sf::st_intersection(points, sf::st_geometry(polygon))
+  sf::st_intersection(sf::st_geometry(points), sf::st_geometry(polygon))
 }
