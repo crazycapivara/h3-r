@@ -18,7 +18,8 @@ CharacterVector rcpp_h3_to_parent(String h3s, int res) {
 CharacterVector rcpp_h3_to_children(String h3s, int res) {
   H3Index h3 = stringToH3(h3s.get_cstring());
   int n = maxH3ToChildrenSize(h3, res);
-  H3Index h3Children[n];
+  // H3Index h3Children[n];
+  H3Index* h3Children = new H3Index[n];
   h3ToChildren(h3, res, h3Children);
   CharacterVector z(n);
   for (int i = 0; i < n; ++i) {
@@ -27,5 +28,6 @@ CharacterVector rcpp_h3_to_children(String h3s, int res) {
     z[i] = childStr;
   }
 
+  delete[] h3Children;
   return z;
 }
