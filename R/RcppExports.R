@@ -62,6 +62,15 @@ hex_area <- function(res, unit) {
     .Call(`_h3_hex_area`, res, unit)
 }
 
+#' Average hexagon edge length in meters or kilometers at the given resolution.
+#' @param res resolution between 0 and 15
+#' @param unit either \code{m} or \code{km}
+#' @return numeric vector
+#' @export
+edge_length <- function(res, unit) {
+    .Call(`_h3_edge_length`, res, unit)
+}
+
 rcpp_k_ring <- function(h3s, radius) {
     .Call(`_h3_rcpp_k_ring`, h3s, radius)
 }
