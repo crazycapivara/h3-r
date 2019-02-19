@@ -94,14 +94,17 @@ rcpp_k_ring_distances <- function(h3s, radius) {
 
 #' Check whether the given hexagons are neighbors.
 #' @param origin character scalar; origin H3 index
-#' @param destinations; character vector of destination H3 indexes
+#' @param destinations character vector of destination H3 indexes
 #' @export
 h3_indexes_are_neighbors <- function(origin, destinations) {
     .Call(`_h3_h3_indexes_are_neighbors`, origin, destinations)
 }
 
+#' Get the H3 edge index based on the given origin and destination hexagons.
+#' @param origin character scalar; origin H3 index
+#' @param destination character scalar; destination H3 index
 #' @export
-get_h3_undirectional_edge <- function(origin, destination) {
-    .Call(`_h3_get_h3_undirectional_edge`, origin, destination)
+get_h3_unidirectional_edge <- function(origin, destination) {
+    .Call(`_h3_get_h3_unidirectional_edge`, origin, destination)
 }
 

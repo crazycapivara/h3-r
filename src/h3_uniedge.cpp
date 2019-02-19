@@ -5,7 +5,7 @@ using namespace Rcpp;
 
 //' Check whether the given hexagons are neighbors.
 //' @param origin character scalar; origin H3 index
-//' @param destinations; character vector of destination H3 indexes
+//' @param destinations character vector of destination H3 indexes
 //' @export
 // [[Rcpp::export]]
 LogicalVector h3_indexes_are_neighbors(String origin, CharacterVector destinations) {
@@ -25,7 +25,7 @@ LogicalVector h3_indexes_are_neighbors(String origin, CharacterVector destinatio
 //' @param destination character scalar; destination H3 index
 //' @export
 // [[Rcpp::export]]
-CharacterVector get_h3_undirectional_edge(String origin, String destination) {
+CharacterVector get_h3_unidirectional_edge(String origin, String destination) {
   H3Index h3Origin = H3_EXPORT(stringToH3)(origin.get_cstring());
   H3Index h3Destination = H3_EXPORT(stringToH3)(destination.get_cstring());
   H3Index h3Edge = H3_EXPORT(getH3UnidirectionalEdge)(h3Origin, h3Destination);
