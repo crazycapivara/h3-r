@@ -178,6 +178,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// h3_indexes_are_neighbors
+LogicalVector h3_indexes_are_neighbors(String origin, CharacterVector destinations);
+RcppExport SEXP _h3_h3_indexes_are_neighbors(SEXP originSEXP, SEXP destinationsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type origin(originSEXP);
+    Rcpp::traits::input_parameter< CharacterVector >::type destinations(destinationsSEXP);
+    rcpp_result_gen = Rcpp::wrap(h3_indexes_are_neighbors(origin, destinations));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_h3_rcpp_h3_to_parent", (DL_FUNC) &_h3_rcpp_h3_to_parent, 2},
@@ -195,6 +207,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_h3_rcpp_k_ring", (DL_FUNC) &_h3_rcpp_k_ring, 2},
     {"_h3_h3_distance", (DL_FUNC) &_h3_h3_distance, 2},
     {"_h3_rcpp_k_ring_distances", (DL_FUNC) &_h3_rcpp_k_ring_distances, 2},
+    {"_h3_h3_indexes_are_neighbors", (DL_FUNC) &_h3_h3_indexes_are_neighbors, 2},
     {NULL, NULL, 0}
 };
 

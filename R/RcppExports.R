@@ -92,3 +92,8 @@ rcpp_k_ring_distances <- function(h3s, radius) {
     .Call(`_h3_rcpp_k_ring_distances`, h3s, radius)
 }
 
+#' @export
+h3_indexes_are_neighbors <- function(origin, destinations) {
+    .Call(`_h3_h3_indexes_are_neighbors`, origin, destinations)
+}
+
