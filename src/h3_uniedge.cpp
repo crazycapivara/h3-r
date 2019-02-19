@@ -36,3 +36,16 @@ CharacterVector get_h3_unidirectional_edge(String origin, String destination) {
   return z;
 }
 
+//' Check whether the given indexes are valid H3 edge indexes.
+//' @param h3_edge_indexes character vector of H3 edge indexes
+//' @export
+// [[Rcpp::export]]
+LogicalVector h3_unidirectional_edge_is_valid(CharacterVector h3_edge_indexes) {
+  int n = h3_edge_indexes.size();
+  LogicalVector z(n);
+  for (int i = 0; i < n; i++) {
+    H3Index h3EdgeIndex = H3_EXPORT(stringToH3)(h3_edge_indexes[i]);
+    z[i] = H3_EXPORT(h3UnidirectionalEdgeIsValid)(h3EdgeIndex);
+  }
+  return z;
+}

@@ -9,7 +9,7 @@ h3_indexes_are_neighbors(origin, destinations)
 \arguments{
 \item{origin}{character scalar; origin H3 index}
 
-\item{destinations;}{character vector of destination H3 indexes}
+\item{destinations}{character vector of destination H3 indexes}
 }
 \description{
 Check whether the given hexagons are neighbors.

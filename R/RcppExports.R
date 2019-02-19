@@ -108,3 +108,10 @@ get_h3_unidirectional_edge <- function(origin, destination) {
     .Call(`_h3_get_h3_unidirectional_edge`, origin, destination)
 }
 
+#' Check whether the given indexes are valid H3 edge indexes.
+#' @param h3_edge_indexes character vector of H3 edge indexes
+#' @export
+h3_unidirectional_edge_is_valid <- function(h3_edge_indexes) {
+    .Call(`_h3_h3_unidirectional_edge_is_valid`, h3_edge_indexes)
+}
+

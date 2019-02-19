@@ -26,3 +26,15 @@ test_that("neighbors", {
   expect_length(are_neighbors, 7)
   expect_equal(are_neighbors, c(FALSE, rep(TRUE, 6)))
 })
+
+test_that("edge index is valid", {
+  # Prepare
+  indexes <- c("167283472bffffff", h3_origin)
+
+  # Act
+  are_valid <- h3_unidirectional_edge_is_valid(indexes)
+
+  # Assert
+  expect_length(are_valid, 2)
+  expect_equal(are_valid, c(TRUE, FALSE))
+})

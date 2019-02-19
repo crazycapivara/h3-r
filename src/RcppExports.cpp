@@ -202,6 +202,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// h3_unidirectional_edge_is_valid
+LogicalVector h3_unidirectional_edge_is_valid(CharacterVector h3_edge_indexes);
+RcppExport SEXP _h3_h3_unidirectional_edge_is_valid(SEXP h3_edge_indexesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< CharacterVector >::type h3_edge_indexes(h3_edge_indexesSEXP);
+    rcpp_result_gen = Rcpp::wrap(h3_unidirectional_edge_is_valid(h3_edge_indexes));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_h3_rcpp_h3_to_parent", (DL_FUNC) &_h3_rcpp_h3_to_parent, 2},
@@ -221,6 +232,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_h3_rcpp_k_ring_distances", (DL_FUNC) &_h3_rcpp_k_ring_distances, 2},
     {"_h3_h3_indexes_are_neighbors", (DL_FUNC) &_h3_h3_indexes_are_neighbors, 2},
     {"_h3_get_h3_unidirectional_edge", (DL_FUNC) &_h3_get_h3_unidirectional_edge, 2},
+    {"_h3_h3_unidirectional_edge_is_valid", (DL_FUNC) &_h3_h3_unidirectional_edge_is_valid, 1},
     {NULL, NULL, 0}
 };
 
