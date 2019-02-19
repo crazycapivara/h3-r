@@ -190,6 +190,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// get_h3_undirectional_edge
+CharacterVector get_h3_undirectional_edge(String origin, String destination);
+RcppExport SEXP _h3_get_h3_undirectional_edge(SEXP originSEXP, SEXP destinationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type origin(originSEXP);
+    Rcpp::traits::input_parameter< String >::type destination(destinationSEXP);
+    rcpp_result_gen = Rcpp::wrap(get_h3_undirectional_edge(origin, destination));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_h3_rcpp_h3_to_parent", (DL_FUNC) &_h3_rcpp_h3_to_parent, 2},
@@ -208,6 +220,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_h3_h3_distance", (DL_FUNC) &_h3_h3_distance, 2},
     {"_h3_rcpp_k_ring_distances", (DL_FUNC) &_h3_rcpp_k_ring_distances, 2},
     {"_h3_h3_indexes_are_neighbors", (DL_FUNC) &_h3_h3_indexes_are_neighbors, 2},
+    {"_h3_get_h3_undirectional_edge", (DL_FUNC) &_h3_get_h3_undirectional_edge, 2},
     {NULL, NULL, 0}
 };
 

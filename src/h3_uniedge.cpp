@@ -20,3 +20,19 @@ LogicalVector h3_indexes_are_neighbors(String origin, CharacterVector destinatio
   return z;
 }
 
+//' Get the H3 edge index based on the given origin and destination hexagons.
+//' @param origin character scalar; origin H3 index
+//' @param destination character scalar; destination H3 index
+//' @export
+// [[Rcpp::export]]
+CharacterVector get_h3_undirectional_edge(String origin, String destination) {
+  H3Index h3Origin = H3_EXPORT(stringToH3)(origin.get_cstring());
+  H3Index h3Destination = H3_EXPORT(stringToH3)(destination.get_cstring());
+  H3Index h3Edge = H3_EXPORT(getH3UnidirectionalEdge)(h3Origin, h3Destination);
+  char edgeIndexStr[17];
+  H3_EXPORT(h3ToString)(h3Edge, edgeIndexStr, sizeof(edgeIndexStr));
+  CharacterVector z(1);
+  z[0] = edgeIndexStr;
+  return z;
+}
+
