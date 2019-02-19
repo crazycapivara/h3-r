@@ -49,3 +49,21 @@ LogicalVector h3_unidirectional_edge_is_valid(CharacterVector h3_edge_indexes) {
   }
   return z;
 }
+
+//' Get the coordinates defining the unidirectional edge.
+//' @param h3EdgeStr character scalar; H3 edge index
+//' @export
+// [[Rcpp::export]]
+NumericMatrix get_h3_unidirectional_edge_boundary(String h3EdgeStr) {
+  H3Index h3EdgeIndex = stringToH3(h3EdgeStr.get_cstring());
+  GeoBoundary geoBoundary;
+  H3_EXPORT(getH3UnidirectionalEdgeBoundary)(h3EdgeIndex, &geoBoundary);
+  NumericMatrix m(geoBoundary.numVerts, 2);
+  for (int i = 0; i < geoBoundary.numVerts; i++) {
+    m(i, 0) = radsToDegs(geoBoundary.verts[i].lat);
+    m(i, 1) = radsToDegs(geoBoundary.verts[i].lon);
+  }
+
+  colnames(m) = CharacterVector::create("lat", "lng");
+  return m;
+}
