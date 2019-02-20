@@ -67,3 +67,26 @@ NumericMatrix get_h3_unidirectional_edge_boundary(String h3EdgeStr) {
   colnames(m) = CharacterVector::create("lat", "lng");
   return m;
 }
+
+//' @export
+// [[Rcpp::export]]
+CharacterVector get_h3_unidirectional_edges_from_hexagon(String originStr) {
+  H3Index origin = stringToH3(originStr.get_cstring());
+  const int n = 6;
+  H3Index* edges = new H3Index[n]();
+  getH3UnidirectionalEdgesFromHexagon(origin, edges);
+  int counter = 0;
+  for (int i = 0; i< n; i++) {
+    if (edges[i] != 0) counter++;
+  }
+
+  CharacterVector z(counter);
+  for (int i = 0; i < counter; i++) {
+    char edgeStr[17];
+    h3ToString(edges[i], edgeStr, sizeof(edgeStr));
+    z[i] = edgeStr;
+  }
+
+  return z;
+}
+
