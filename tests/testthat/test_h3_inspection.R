@@ -1,4 +1,4 @@
-context("inspection")
+context("H3 inspection")
 
 test_that("is pentagon", {
   # Prepare
