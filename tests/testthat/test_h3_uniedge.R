@@ -97,3 +97,18 @@ test_that("get origin from edge", {
   expect_true(is_valid_h3_index)
   expect_equal(h3_index, "87195186bffffff")
 })
+
+test_that("get destination from edge", {
+  # Prepare
+  h3_orgin_index <- "87195186bffffff"
+  h3_destination_index <- "871951b36ffffff"
+
+  # Act
+  are_neighbors <- h3_indexes_are_neighbors(h3_orgin_index, h3_destination_index)
+  edge <- get_h3_unidirectional_edge(h3_orgin_index, h3_destination_index)
+  destination <- get_destination_h3_index_from_unidirectional_edge(edge)
+
+  # Assert
+  expect_true(are_neighbors)
+  expect_equal(destination, h3_destination_index)
+})

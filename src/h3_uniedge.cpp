@@ -94,3 +94,12 @@ String rcpp_get_origin_h3_index_from_unidirectional_edge(String h3EdgeStr) {
   h3ToString(h3OriginIndex, h3OriginStr, sizeof(h3OriginStr));
   return h3OriginStr;
 }
+
+// [[Rcpp::export]]
+String rcpp_get_destination_h3_index_from_unidirectional_edge(String h3EdgeStr) {
+  H3Index h3EdgeIndex = stringToH3(h3EdgeStr.get_cstring());
+  H3Index h3DestinationIndex = getDestinationH3IndexFromUnidirectionalEdge(h3EdgeIndex);
+  char h3DestinationStr[17];
+  h3ToString(h3DestinationIndex, h3DestinationStr, sizeof(h3DestinationStr));
+  return h3DestinationStr;
+}

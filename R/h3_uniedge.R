@@ -19,3 +19,10 @@ get_h3_unidirectional_edges_from_hexagon <- function(h3_index) {
 get_origin_h3_index_from_unidirectional_edge <- function(h3_edge_index) {
   rcpp_get_origin_h3_index_from_unidirectional_edge(h3_edge_index)
 }
+
+#' Get the destination hexagon from the unidirectional H3 edge index.
+#' @inheritParams get_h3_unidirectional_edge_boundary
+#' @export
+get_destination_h3_index_from_unidirectional_edge <- function(h3_edge_index) {
+  rcpp_get_destination_h3_index_from_unidirectional_edge(h3_edge_index)
+}
