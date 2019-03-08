@@ -9,7 +9,7 @@ CharacterVector rcpp_k_ring(String h3s, int radius) {
   H3Index h3 = stringToH3(h3s.get_cstring());
   int n = maxKringSize(radius);
   // H3Index* out = (H3Index*)calloc(n, sizeof(H3Index));
-  H3Index* out = new H3Index[n];
+  H3Index* out = new H3Index[n]();
   kRing(h3, radius, out);
   int counter = 0;
   for (int i = 0; i < n; ++i) {
@@ -63,9 +63,9 @@ List rcpp_k_ring_distances(String h3s, int radius) {
   H3Index h3 = stringToH3(h3s.get_cstring());
   int n = maxKringSize(radius);
   // H3Index* out = (H3Index*)calloc(n, sizeof(H3Index));
-  H3Index* out = new H3Index[n];
+  H3Index* out = new H3Index[n]();
   // int* distances = (int*)calloc(n, sizeof(int));
-  int* distances = new int[n];
+  int* distances = new int[n]();
   kRingDistances(h3, radius, out, distances);
   int counter = 0;
   for (int i = 0; i < n; ++i) {

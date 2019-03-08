@@ -9,6 +9,10 @@ rcpp_h3_to_children <- function(h3s, res) {
     .Call(`_h3_rcpp_h3_to_children`, h3s, res)
 }
 
+rcpp_compact <- function(h3Str) {
+    .Call(`_h3_rcpp_compact`, h3Str)
+}
+
 rcpp_geo_to_h3 <- function(latlng, res) {
     .Call(`_h3_rcpp_geo_to_h3`, latlng, res)
 }
@@ -62,6 +66,15 @@ hex_area <- function(res, unit) {
     .Call(`_h3_hex_area`, res, unit)
 }
 
+#' Average hexagon edge length in meters or kilometers at the given resolution.
+#' @param res resolution between 0 and 15
+#' @param unit either \code{m} or \code{km}
+#' @return numeric vector
+#' @export
+edge_length <- function(res, unit) {
+    .Call(`_h3_edge_length`, res, unit)
+}
+
 rcpp_k_ring <- function(h3s, radius) {
     .Call(`_h3_rcpp_k_ring`, h3s, radius)
 }
@@ -77,5 +90,36 @@ h3_distance <- function(origin, destinations) {
 
 rcpp_k_ring_distances <- function(h3s, radius) {
     .Call(`_h3_rcpp_k_ring_distances`, h3s, radius)
+}
+
+#' Check whether the given hexagons are neighbors.
+#' @param origin character scalar; origin H3 index
+#' @param destinations character vector of destination H3 indexes
+#' @export
+h3_indexes_are_neighbors <- function(origin, destinations) {
+    .Call(`_h3_h3_indexes_are_neighbors`, origin, destinations)
+}
+
+#' Get the H3 edge index based on the given origin and destination hexagons.
+#' @param origin character scalar; origin H3 index
+#' @param destination character scalar; destination H3 index
+#' @export
+get_h3_unidirectional_edge <- function(origin, destination) {
+    .Call(`_h3_get_h3_unidirectional_edge`, origin, destination)
+}
+
+#' Check whether the given indexes are valid H3 edge indexes.
+#' @param h3_edge_indexes character vector of H3 edge indexes
+#' @export
+h3_unidirectional_edge_is_valid <- function(h3_edge_indexes) {
+    .Call(`_h3_h3_unidirectional_edge_is_valid`, h3_edge_indexes)
+}
+
+rcpp_get_h3_unidirectional_edge_boundary <- function(h3EdgeStr) {
+    .Call(`_h3_rcpp_get_h3_unidirectional_edge_boundary`, h3EdgeStr)
+}
+
+rcpp_get_h3_unidirectional_edges_from_hexagon <- function(originStr) {
+    .Call(`_h3_rcpp_get_h3_unidirectional_edges_from_hexagon`, originStr)
 }
 
