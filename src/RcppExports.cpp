@@ -235,6 +235,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rcpp_get_origin_h3_index_from_unidirectional_edge
+String rcpp_get_origin_h3_index_from_unidirectional_edge(String h3EdgeStr);
+RcppExport SEXP _h3_rcpp_get_origin_h3_index_from_unidirectional_edge(SEXP h3EdgeStrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type h3EdgeStr(h3EdgeStrSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_get_origin_h3_index_from_unidirectional_edge(h3EdgeStr));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_h3_rcpp_h3_to_parent", (DL_FUNC) &_h3_rcpp_h3_to_parent, 2},
@@ -257,6 +268,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_h3_h3_unidirectional_edge_is_valid", (DL_FUNC) &_h3_h3_unidirectional_edge_is_valid, 1},
     {"_h3_rcpp_get_h3_unidirectional_edge_boundary", (DL_FUNC) &_h3_rcpp_get_h3_unidirectional_edge_boundary, 1},
     {"_h3_rcpp_get_h3_unidirectional_edges_from_hexagon", (DL_FUNC) &_h3_rcpp_get_h3_unidirectional_edges_from_hexagon, 1},
+    {"_h3_rcpp_get_origin_h3_index_from_unidirectional_edge", (DL_FUNC) &_h3_rcpp_get_origin_h3_index_from_unidirectional_edge, 1},
     {NULL, NULL, 0}
 };
 

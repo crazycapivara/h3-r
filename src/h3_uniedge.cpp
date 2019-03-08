@@ -86,3 +86,11 @@ CharacterVector rcpp_get_h3_unidirectional_edges_from_hexagon(String originStr) 
   return z;
 }
 
+// [[Rcpp::export]]
+String rcpp_get_origin_h3_index_from_unidirectional_edge(String h3EdgeStr) {
+  H3Index h3EdgeIndex = stringToH3(h3EdgeStr.get_cstring());
+  H3Index h3OriginIndex = getOriginH3IndexFromUnidirectionalEdge(h3EdgeIndex);
+  char h3OriginStr[17];
+  h3ToString(h3OriginIndex, h3OriginStr, sizeof(h3OriginStr));
+  return h3OriginStr;
+}

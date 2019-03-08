@@ -123,3 +123,7 @@ rcpp_get_h3_unidirectional_edges_from_hexagon <- function(originStr) {
     .Call(`_h3_rcpp_get_h3_unidirectional_edges_from_hexagon`, originStr)
 }
 
+rcpp_get_origin_h3_index_from_unidirectional_edge <- function(h3EdgeStr) {
+    .Call(`_h3_rcpp_get_origin_h3_index_from_unidirectional_edge`, h3EdgeStr)
+}
+

@@ -84,3 +84,16 @@ test_that("parse edge index to sf object", {
   expect_is(line, "sf")
   expect_length(nrow(line), 1)
 })
+
+test_that("get origin from edge", {
+  # Prepare
+  h3_edge_index <- "117195186bffffff"
+
+  # Act
+  h3_index <- get_origin_h3_index_from_unidirectional_edge(h3_edge_index)
+  is_valid_h3_index <- h3_is_valid(h3_index)
+
+  # Assert
+  expect_true(is_valid_h3_index)
+  expect_equal(h3_index, "87195186bffffff")
+})
