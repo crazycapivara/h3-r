@@ -49,6 +49,14 @@ h3_get_base_cell <- function(h3Str) {
     .Call(`_h3_h3_get_base_cell`, h3Str)
 }
 
+#' Check whether the given H3 indexes are pentagons.
+#' @param h3Str character vector of H3 indexes
+#' @return logical vector
+#' @export
+h3_is_pentagon <- function(h3Str) {
+    .Call(`_h3_h3_is_pentagon`, h3Str)
+}
+
 #' Number of unique H3 indexes at the given resolution.
 #' @param res numeric vector; resolution between 0 and 15
 #' @return numeric vector
