@@ -115,11 +115,8 @@ h3_unidirectional_edge_is_valid <- function(h3_edge_indexes) {
     .Call(`_h3_h3_unidirectional_edge_is_valid`, h3_edge_indexes)
 }
 
-#' Get the coordinates defining the unidirectional edge.
-#' @param h3EdgeStr character scalar; H3 edge index
-#' @export
-get_h3_unidirectional_edge_boundary <- function(h3EdgeStr) {
-    .Call(`_h3_get_h3_unidirectional_edge_boundary`, h3EdgeStr)
+rcpp_get_h3_unidirectional_edge_boundary <- function(h3EdgeStr) {
+    .Call(`_h3_rcpp_get_h3_unidirectional_edge_boundary`, h3EdgeStr)
 }
 
 rcpp_get_h3_unidirectional_edges_from_hexagon <- function(originStr) {

@@ -6,6 +6,9 @@
 \usage{
 get_h3_unidirectional_edge_boundary_sf(h3_edge_index)
 }
+\arguments{
+\item{h3_edge_index}{character scalar; H3 edge index}
+}
 \description{
 Get the unidirectional edge as \code{sf} object.
 }
