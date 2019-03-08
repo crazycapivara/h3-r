@@ -122,8 +122,7 @@ get_h3_unidirectional_edge_boundary <- function(h3EdgeStr) {
     .Call(`_h3_get_h3_unidirectional_edge_boundary`, h3EdgeStr)
 }
 
-#' @export
-get_h3_unidirectional_edges_from_hexagon <- function(originStr) {
-    .Call(`_h3_get_h3_unidirectional_edges_from_hexagon`, originStr)
+rcpp_get_h3_unidirectional_edges_from_hexagon <- function(originStr) {
+    .Call(`_h3_rcpp_get_h3_unidirectional_edges_from_hexagon`, originStr)
 }
 

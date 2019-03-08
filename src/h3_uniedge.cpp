@@ -68,9 +68,8 @@ NumericMatrix get_h3_unidirectional_edge_boundary(String h3EdgeStr) {
   return m;
 }
 
-//' @export
 // [[Rcpp::export]]
-CharacterVector get_h3_unidirectional_edges_from_hexagon(String originStr) {
+CharacterVector rcpp_get_h3_unidirectional_edges_from_hexagon(String originStr) {
   H3Index origin = stringToH3(originStr.get_cstring());
   const int n = 6;
   H3Index* edges = new H3Index[n]();
