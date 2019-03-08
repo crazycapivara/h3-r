@@ -29,6 +29,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rcpp_compact
+CharacterVector rcpp_compact(CharacterVector h3Str);
+RcppExport SEXP _h3_rcpp_compact(SEXP h3StrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< CharacterVector >::type h3Str(h3StrSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_compact(h3Str));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_geo_to_h3
 CharacterVector rcpp_geo_to_h3(NumericMatrix latlng, int res);
 RcppExport SEXP _h3_rcpp_geo_to_h3(SEXP latlngSEXP, SEXP resSEXP) {
@@ -96,6 +107,28 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// h3_is_pentagon
+LogicalVector h3_is_pentagon(CharacterVector h3Str);
+RcppExport SEXP _h3_h3_is_pentagon(SEXP h3StrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< CharacterVector >::type h3Str(h3StrSEXP);
+    rcpp_result_gen = Rcpp::wrap(h3_is_pentagon(h3Str));
+    return rcpp_result_gen;
+END_RCPP
+}
+// h3_is_res_class_iii
+LogicalVector h3_is_res_class_iii(CharacterVector h3Str);
+RcppExport SEXP _h3_h3_is_res_class_iii(SEXP h3StrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< CharacterVector >::type h3Str(h3StrSEXP);
+    rcpp_result_gen = Rcpp::wrap(h3_is_res_class_iii(h3Str));
+    return rcpp_result_gen;
+END_RCPP
+}
 // num_hexagons
 NumericVector num_hexagons(NumericVector res);
 RcppExport SEXP _h3_num_hexagons(SEXP resSEXP) {
@@ -116,6 +149,18 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< NumericVector >::type res(resSEXP);
     Rcpp::traits::input_parameter< String >::type unit(unitSEXP);
     rcpp_result_gen = Rcpp::wrap(hex_area(res, unit));
+    return rcpp_result_gen;
+END_RCPP
+}
+// edge_length
+NumericVector edge_length(NumericVector res, String unit);
+RcppExport SEXP _h3_edge_length(SEXP resSEXP, SEXP unitSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type res(resSEXP);
+    Rcpp::traits::input_parameter< String >::type unit(unitSEXP);
+    rcpp_result_gen = Rcpp::wrap(edge_length(res, unit));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -155,21 +200,111 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// h3_indexes_are_neighbors
+LogicalVector h3_indexes_are_neighbors(String origin, CharacterVector destinations);
+RcppExport SEXP _h3_h3_indexes_are_neighbors(SEXP originSEXP, SEXP destinationsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type origin(originSEXP);
+    Rcpp::traits::input_parameter< CharacterVector >::type destinations(destinationsSEXP);
+    rcpp_result_gen = Rcpp::wrap(h3_indexes_are_neighbors(origin, destinations));
+    return rcpp_result_gen;
+END_RCPP
+}
+// get_h3_unidirectional_edge
+CharacterVector get_h3_unidirectional_edge(String origin, String destination);
+RcppExport SEXP _h3_get_h3_unidirectional_edge(SEXP originSEXP, SEXP destinationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type origin(originSEXP);
+    Rcpp::traits::input_parameter< String >::type destination(destinationSEXP);
+    rcpp_result_gen = Rcpp::wrap(get_h3_unidirectional_edge(origin, destination));
+    return rcpp_result_gen;
+END_RCPP
+}
+// h3_unidirectional_edge_is_valid
+LogicalVector h3_unidirectional_edge_is_valid(CharacterVector h3_edge_indexes);
+RcppExport SEXP _h3_h3_unidirectional_edge_is_valid(SEXP h3_edge_indexesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< CharacterVector >::type h3_edge_indexes(h3_edge_indexesSEXP);
+    rcpp_result_gen = Rcpp::wrap(h3_unidirectional_edge_is_valid(h3_edge_indexes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_get_h3_unidirectional_edge_boundary
+NumericMatrix rcpp_get_h3_unidirectional_edge_boundary(String h3EdgeStr);
+RcppExport SEXP _h3_rcpp_get_h3_unidirectional_edge_boundary(SEXP h3EdgeStrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type h3EdgeStr(h3EdgeStrSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_get_h3_unidirectional_edge_boundary(h3EdgeStr));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_get_h3_unidirectional_edges_from_hexagon
+CharacterVector rcpp_get_h3_unidirectional_edges_from_hexagon(String originStr);
+RcppExport SEXP _h3_rcpp_get_h3_unidirectional_edges_from_hexagon(SEXP originStrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type originStr(originStrSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_get_h3_unidirectional_edges_from_hexagon(originStr));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_get_origin_h3_index_from_unidirectional_edge
+String rcpp_get_origin_h3_index_from_unidirectional_edge(String h3EdgeStr);
+RcppExport SEXP _h3_rcpp_get_origin_h3_index_from_unidirectional_edge(SEXP h3EdgeStrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type h3EdgeStr(h3EdgeStrSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_get_origin_h3_index_from_unidirectional_edge(h3EdgeStr));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_get_destination_h3_index_from_unidirectional_edge
+String rcpp_get_destination_h3_index_from_unidirectional_edge(String h3EdgeStr);
+RcppExport SEXP _h3_rcpp_get_destination_h3_index_from_unidirectional_edge(SEXP h3EdgeStrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type h3EdgeStr(h3EdgeStrSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_get_destination_h3_index_from_unidirectional_edge(h3EdgeStr));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_h3_rcpp_h3_to_parent", (DL_FUNC) &_h3_rcpp_h3_to_parent, 2},
     {"_h3_rcpp_h3_to_children", (DL_FUNC) &_h3_rcpp_h3_to_children, 2},
+    {"_h3_rcpp_compact", (DL_FUNC) &_h3_rcpp_compact, 1},
     {"_h3_rcpp_geo_to_h3", (DL_FUNC) &_h3_rcpp_geo_to_h3, 2},
     {"_h3_rcpp_h3_to_geo", (DL_FUNC) &_h3_rcpp_h3_to_geo, 1},
     {"_h3_rcpp_h3_to_geo_boundary", (DL_FUNC) &_h3_rcpp_h3_to_geo_boundary, 1},
     {"_h3_h3_get_resolution", (DL_FUNC) &_h3_h3_get_resolution, 1},
     {"_h3_h3_is_valid", (DL_FUNC) &_h3_h3_is_valid, 1},
     {"_h3_h3_get_base_cell", (DL_FUNC) &_h3_h3_get_base_cell, 1},
+    {"_h3_h3_is_pentagon", (DL_FUNC) &_h3_h3_is_pentagon, 1},
+    {"_h3_h3_is_res_class_iii", (DL_FUNC) &_h3_h3_is_res_class_iii, 1},
     {"_h3_num_hexagons", (DL_FUNC) &_h3_num_hexagons, 1},
     {"_h3_hex_area", (DL_FUNC) &_h3_hex_area, 2},
+    {"_h3_edge_length", (DL_FUNC) &_h3_edge_length, 2},
     {"_h3_rcpp_k_ring", (DL_FUNC) &_h3_rcpp_k_ring, 2},
     {"_h3_h3_distance", (DL_FUNC) &_h3_h3_distance, 2},
     {"_h3_rcpp_k_ring_distances", (DL_FUNC) &_h3_rcpp_k_ring_distances, 2},
+    {"_h3_h3_indexes_are_neighbors", (DL_FUNC) &_h3_h3_indexes_are_neighbors, 2},
+    {"_h3_get_h3_unidirectional_edge", (DL_FUNC) &_h3_get_h3_unidirectional_edge, 2},
+    {"_h3_h3_unidirectional_edge_is_valid", (DL_FUNC) &_h3_h3_unidirectional_edge_is_valid, 1},
+    {"_h3_rcpp_get_h3_unidirectional_edge_boundary", (DL_FUNC) &_h3_rcpp_get_h3_unidirectional_edge_boundary, 1},
+    {"_h3_rcpp_get_h3_unidirectional_edges_from_hexagon", (DL_FUNC) &_h3_rcpp_get_h3_unidirectional_edges_from_hexagon, 1},
+    {"_h3_rcpp_get_origin_h3_index_from_unidirectional_edge", (DL_FUNC) &_h3_rcpp_get_origin_h3_index_from_unidirectional_edge, 1},
+    {"_h3_rcpp_get_destination_h3_index_from_unidirectional_edge", (DL_FUNC) &_h3_rcpp_get_destination_h3_index_from_unidirectional_edge, 1},
     {NULL, NULL, 0}
 };
 

@@ -50,3 +50,36 @@ NumericVector h3_get_base_cell(CharacterVector h3Str) {
 
   return z;
 }
+
+//' Check whether the given H3 indexes are pentagons.
+//' @param h3Str character vector of H3 indexes
+//' @return logical vector
+//' @export
+// [[Rcpp::export]]
+LogicalVector h3_is_pentagon(CharacterVector h3Str) {
+  int n = h3Str.size();
+  LogicalVector z(n);
+  for (int i = 0; i < n; ++i) {
+    H3Index h3 = stringToH3(h3Str[i]);
+    z[i] = h3IsPentagon(h3);
+  }
+
+  return z;
+}
+
+//' Check whether the given H3 indexes have a resolution
+//' with Class III orientation.
+//' @param h3Str character vector of H3 indexes
+//' @return logical vector
+//' @export
+// [[Rcpp::export]]
+LogicalVector h3_is_res_class_iii(CharacterVector h3Str) {
+  int n = h3Str.size();
+  LogicalVector z(n);
+  for (int i = 0; i < n; ++i) {
+    H3Index h3 = stringToH3(h3Str[i]);
+    z[i] = h3IsResClassIII(h3);
+  }
+
+  return z;
+}

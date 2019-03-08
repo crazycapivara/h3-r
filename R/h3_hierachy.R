@@ -15,3 +15,10 @@ h3_to_parent <- function(h3_index, res) {
 h3_to_children <- function(h3_index, res) {
   rcpp_h3_to_children(h3_index, res)
 }
+
+#' Compact a set of hexagons of the same resolution into a set of hexagons across multiple levels.
+#' @param h3_indexes character vector of H3 indexes
+#' @export
+compact <- function(h3_indexes) {
+  rcpp_compact(h3_indexes)
+}

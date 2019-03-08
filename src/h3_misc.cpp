@@ -33,3 +33,20 @@ NumericVector hex_area(NumericVector res, String unit) {
 
   return z;
 }
+
+//' Average hexagon edge length in meters or kilometers at the given resolution.
+//' @param res resolution between 0 and 15
+//' @param unit either \code{m} or \code{km}
+//' @return numeric vector
+//' @export
+// [[Rcpp::export]]
+NumericVector edge_length(NumericVector res, String unit) {
+  int n = res.size();
+  NumericVector z(n);
+  for (int i = 0; i < n; ++i) {
+    z[i] = (unit == "m") ? edgeLengthM(res[i]) : edgeLengthKm(res[i]);
+  }
+
+  return z;
+}
+
