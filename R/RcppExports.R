@@ -57,6 +57,15 @@ h3_is_pentagon <- function(h3Str) {
     .Call(`_h3_h3_is_pentagon`, h3Str)
 }
 
+#' Check whether the given H3 indexes have a resolution
+#' with Class III orientation.
+#' @param h3Str character vector of H3 indexes
+#' @return logical vector
+#' @export
+h3_is_res_class_iii <- function(h3Str) {
+    .Call(`_h3_h3_is_res_class_iii`, h3Str)
+}
+
 #' Number of unique H3 indexes at the given resolution.
 #' @param res numeric vector; resolution between 0 and 15
 #' @return numeric vector
