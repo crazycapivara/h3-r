@@ -60,7 +60,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">H3 for R</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">3.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">3.3.1</span>
       </span>
     </div>
 
@@ -123,6 +123,24 @@
       <tr>
         
         <td>
+          <p><code><a href="compact.html">compact()</a></code> </p>
+        </td>
+        <td><p>Compact a set of hexagons of the same resolution into a set of hexagons across multiple levels.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="edge_boundary_to_sf.html">edge_boundary_to_sf()</a></code> </p>
+        </td>
+        <td><p>Parse edge coordiantes to <code>sf</code> object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="edge_length.html">edge_length()</a></code> </p>
+        </td>
+        <td><p>Average hexagon edge length in meters or kilometers at the given resolution.</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="geo_boundary_to_sf.html">geo_boundary_to_sf()</a></code> </p>
         </td>
         <td><p>Parse geo-boundaries to <code>sf</code> object.</p></td>
@@ -141,6 +159,42 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="get_destination_h3_index_from_unidirectional_edge.html">get_destination_h3_index_from_unidirectional_edge()</a></code> </p>
+        </td>
+        <td><p>Get the destination hexagon from the unidirectional H3 edge index.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_h3_unidirectional_edge.html">get_h3_unidirectional_edge()</a></code> </p>
+        </td>
+        <td><p>Get the H3 edge index based on the given origin and destination hexagons.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_h3_unidirectional_edge_boundary.html">get_h3_unidirectional_edge_boundary()</a></code> </p>
+        </td>
+        <td><p>Get the coordinates defining the unidirectional edge.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_h3_unidirectional_edge_boundary_sf.html">get_h3_unidirectional_edge_boundary_sf()</a></code> </p>
+        </td>
+        <td><p>Get the unidirectional edge as <code>sf</code> object.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_h3_unidirectional_edges_from_hexagon.html">get_h3_unidirectional_edges_from_hexagon()</a></code> </p>
+        </td>
+        <td><p>Get all of the unidirectional edges from the given H3 index.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_origin_h3_index_from_unidirectional_edge.html">get_origin_h3_index_from_unidirectional_edge()</a></code> </p>
+        </td>
+        <td><p>Get the origin hexagon from the unidirectional H3 edge index.</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="h3_distance.html">h3_distance()</a></code> </p>
         </td>
         <td><p>Get the grid distance between H3 addresses.</p></td>
@@ -156,6 +210,25 @@
           <p><code><a href="h3_get_resolution.html">h3_get_resolution()</a></code> </p>
         </td>
         <td><p>Get the resolution of the given H3 indexes.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="h3_indexes_are_neighbors.html">h3_indexes_are_neighbors()</a></code> </p>
+        </td>
+        <td><p>Check whether the given hexagons are neighbors.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="h3_is_pentagon.html">h3_is_pentagon()</a></code> </p>
+        </td>
+        <td><p>Check whether the given H3 indexes are pentagons.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="h3_is_res_class_iii.html">h3_is_res_class_iii()</a></code> </p>
+        </td>
+        <td><p>Check whether the given H3 indexes have a resolution
+with Class III orientation.</p></td>
       </tr><tr>
         
         <td>
@@ -204,6 +277,12 @@
           <p><code><a href="h3_to_parent.html">h3_to_parent()</a></code> </p>
         </td>
         <td><p>Get the parent of the given hexagon at a particular resolution.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="h3_unidirectional_edge_is_valid.html">h3_unidirectional_edge_is_valid()</a></code> </p>
+        </td>
+        <td><p>Check whether the given indexes are valid H3 edge indexes.</p></td>
       </tr><tr>
         
         <td>
