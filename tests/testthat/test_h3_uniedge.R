@@ -52,3 +52,35 @@ test_that("get all edges from hexagon", {
   expect_length(edge_indexes, 6)
   expect_equal(edge_indexes, expected_edges)
 })
+
+test_that("edge boundary", {
+  # Prepare
+  edge_index <- "117195186bffffff"
+
+  # Act
+  coords <- get_h3_unidirectional_edge_boundary(edge_index)
+  coords_dim <- dim(coords)
+  coord_colnames <- colnames(coords)
+
+  # Assert
+  expect_true(h3_unidirectional_edge_is_valid(edge_index))
+
+  expect_is(coords, "matrix")
+  expect_equal(coords_dim, c(2, 2))
+  expect_equal(coord_colnames, c("lat", "lng"))
+})
+
+test_that("parse edge index to sf object", {
+  # Prepare
+  edge_index <- "117195186bffffff"
+
+  # Act
+  line <- get_h3_unidirectional_edge_boundary_sf(edge_index)
+
+  # Assert
+  expect_true(h3_unidirectional_edge_is_valid(edge_index))
+
+  expect_equal(sf::st_crs(line)$epsg, 4326)
+  expect_is(line, "sf")
+  expect_length(nrow(line), 1)
+})
