@@ -7,7 +7,7 @@
 edge_boundary_to_sf(latlng)
 }
 \arguments{
-\item{latlng}{matrix; edge coordinates}
+\item{latlng}{matrix (2x2); edge coordinates}
 }
 \description{
 Parse edge coordiantes to \code{sf} object

@@ -1,5 +1,5 @@
 #' Parse edge coordiantes to \code{sf} object
-#' @param latlng matrix; edge coordinates
+#' @param latlng matrix (2x2); edge coordinates
 #' @export
 edge_boundary_to_sf <- function(latlng) {
   sf::st_linestring(latlng[, 2:1]) %>%
@@ -7,6 +7,10 @@ edge_boundary_to_sf <- function(latlng) {
     sf::st_sf()
 }
 
+#' Get the unidirectional edge as \code{sf} object.
+#' @inheritParams get_h3_unidirectional_edge_boundary
+#' @export
 get_h3_unidirectional_edge_boundary_sf <- function(h3_edge_index) {
-  "Not implemented yet"
+  get_h3_unidirectional_edge_boundary(h3_edge_index) %>%
+    edge_boundary_to_sf()
 }
