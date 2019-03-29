@@ -5,6 +5,18 @@
 
 using namespace Rcpp;
 
+// rcpp_hex_ring
+CharacterVector rcpp_hex_ring(String h3s, int radius);
+RcppExport SEXP _h3_rcpp_hex_ring(SEXP h3sSEXP, SEXP radiusSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type h3s(h3sSEXP);
+    Rcpp::traits::input_parameter< int >::type radius(radiusSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_hex_ring(h3s, radius));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_h3_to_parent
 CharacterVector rcpp_h3_to_parent(String h3s, int res);
 RcppExport SEXP _h3_rcpp_h3_to_parent(SEXP h3sSEXP, SEXP resSEXP) {
@@ -281,6 +293,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_h3_rcpp_hex_ring", (DL_FUNC) &_h3_rcpp_hex_ring, 2},
     {"_h3_rcpp_h3_to_parent", (DL_FUNC) &_h3_rcpp_h3_to_parent, 2},
     {"_h3_rcpp_h3_to_children", (DL_FUNC) &_h3_rcpp_h3_to_children, 2},
     {"_h3_rcpp_compact", (DL_FUNC) &_h3_rcpp_compact, 1},
