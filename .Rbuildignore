@@ -5,4 +5,7 @@
 ^h3\.Rproj$
 ^\.Rproj\.user$
 ^install-h3c\.sh$
+^Dockerfile$
+^docker-compose.yml$
 sandbox/
+
