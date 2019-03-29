@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  rocker-tidyverse-h3:
+    container_name: rocker-h3
+    build: .
+    environment:
+      PASSWORD: supersecret
+    ports:
+      - "8787:8787"
+
