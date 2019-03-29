@@ -1,4 +1,7 @@
-FROM rocker/tidyverse:3.5.3
+# Run 'docker build --target rockerh3 -t crazycapivara/rocker-h3-only:latest .',
+# if you want to build the image without 'sf'
+
+FROM rocker/tidyverse:3.5.3 AS rockerh3
 
 LABEL maintainer="Stefan Kuethe <crazycapivara@gmail.com>"
 
@@ -16,4 +19,12 @@ RUN cd h3-r \
   && R -q -e 'devtools::install()' \
   && cd .. \
   && rm -rf h3-r
+
+FROM rockerh3 AS rockerh3sf
+
+RUN apt-get install -y --no-install-recommends \
+  libudunits2-dev \
+  libgdal-dev
+
+RUN install2.r --error sf
 
