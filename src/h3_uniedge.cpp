@@ -47,6 +47,7 @@ LogicalVector h3_unidirectional_edge_is_valid(CharacterVector h3_edge_indexes) {
     H3Index h3EdgeIndex = H3_EXPORT(stringToH3)(h3_edge_indexes[i]);
     z[i] = H3_EXPORT(h3UnidirectionalEdgeIsValid)(h3EdgeIndex);
   }
+
   return z;
 }
 
@@ -83,6 +84,7 @@ CharacterVector rcpp_get_h3_unidirectional_edges_from_hexagon(String originStr) 
     z[i] = edgeStr;
   }
 
+  delete[] edges;
   return z;
 }
 
