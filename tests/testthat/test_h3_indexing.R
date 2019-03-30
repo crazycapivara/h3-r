@@ -9,12 +9,12 @@ test_that("geo to H3", {
 
   # Assert
   expect_length(indexes, 2)
-  expect_equal(indexes, c("87195186bffffff" ,"871951b36ffffff"))
+  expect_equal(indexes, c("87195186bffffff", "871951b36ffffff"))
 })
 
 test_that("H3 to geo", {
   # Prepare
-  indexes <- c("87195186bffffff" ,"871951b36ffffff")
+  indexes <- c("87195186bffffff", "871951b36ffffff")
 
   # Act
   coords <- h3_to_geo(indexes)

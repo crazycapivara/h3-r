@@ -26,4 +26,3 @@ k_ring_distances <- function(h3_index, radius = 1) {
 hex_ring <- function(h3_index, radius = 1) {
   rcpp_hex_ring(h3_index, radius)
 }
-
