@@ -30,3 +30,17 @@ test_that("k ring distances", {
   expect_equal(unique(neighbors$distance), 0:2)
   expect_length(neighbors$h3_index, 19)
 })
+
+test_that("hex ring", {
+  # Prepare
+  h3_index <- "87283472bffffff"
+  radius <- 2
+
+  # Act
+  indexes <- hex_ring(h3_index, radius)
+  distances <- h3_distance(h3_index, indexes)
+
+  # Assert
+  expect_length(indexes, 12)
+  expect_true(all(distances == 2))
+})
