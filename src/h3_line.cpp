@@ -18,6 +18,7 @@ CharacterVector rcpp_h3_line(String startStr, String endStr) {
     z[i] = h3Str;
   }
 
+  delete[] out;
   return z;
 }
 
