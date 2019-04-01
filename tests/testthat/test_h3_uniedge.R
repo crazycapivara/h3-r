@@ -47,8 +47,10 @@ test_that("get all edges from hexagon", {
   edge_indexes <- get_h3_unidirectional_edges_from_hexagon(index)
 
   # Assert
-  expected_edges <- c("117283472bffffff", "127283472bffffff", "137283472bffffff",
-                      "147283472bffffff", "157283472bffffff", "167283472bffffff")
+  expected_edges <- c(
+    "117283472bffffff", "127283472bffffff", "137283472bffffff",
+    "147283472bffffff", "157283472bffffff", "167283472bffffff"
+  )
   expect_length(edge_indexes, 6)
   expect_equal(edge_indexes, expected_edges)
 })
