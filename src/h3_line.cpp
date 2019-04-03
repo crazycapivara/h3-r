@@ -3,7 +3,6 @@
 
 using namespace Rcpp;
 
-//' @export
 // [[Rcpp::export]]
 CharacterVector rcpp_h3_line(String startStr, String endStr) {
   H3Index h3Start = stringToH3(startStr.get_cstring());

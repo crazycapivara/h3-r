@@ -70,7 +70,6 @@ h3_is_res_class_iii <- function(h3Str) {
     .Call(`_h3_h3_is_res_class_iii`, h3Str)
 }
 
-#' @export
 rcpp_h3_line <- function(startStr, endStr) {
     .Call(`_h3_rcpp_h3_line`, startStr, endStr)
 }

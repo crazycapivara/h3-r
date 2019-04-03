@@ -26,3 +26,11 @@ k_ring_distances <- function(h3_index, radius = 1) {
 hex_ring <- function(h3_index, radius = 1) {
   rcpp_hex_ring(h3_index, radius)
 }
+
+#' Get the line of indexes between the given start and end indexes (inclusive).
+#' @param h3_index_start character scalar; H3 start index
+#' @param h3_index_end character scalar; H3 end index
+#' @export
+h3_line <- function(h3_index_start, h3_index_end) {
+  rcpp_h3_line(h3_index_start, h3_index_end)
+}
