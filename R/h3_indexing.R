@@ -63,7 +63,7 @@ h3_to_geo_boundary <- function(h3_index) {
 #' @return object of class \code{sf}
 #' @example inst/examples/api-reference/h3-to-geo-boundary-sf.R
 #' @export
-h3_to_geo_boundary_sf <- function(h3_index) {
+h3_to_geo_boundary_sf <- function(h3_index) { # nocov start
   rcpp_h3_to_geo_boundary(h3_index) %>%
     geo_boundary_to_sf()
-}
+} # nocov end

@@ -70,6 +70,10 @@ h3_is_res_class_iii <- function(h3Str) {
     .Call(`_h3_h3_is_res_class_iii`, h3Str)
 }
 
+rcpp_h3_line <- function(startStr, endStr) {
+    .Call(`_h3_rcpp_h3_line`, startStr, endStr)
+}
+
 #' Number of unique H3 indexes at the given resolution.
 #' @param res numeric vector; resolution between 0 and 15
 #' @return numeric vector
