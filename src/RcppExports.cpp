@@ -5,6 +5,18 @@
 
 using namespace Rcpp;
 
+// rcpp_hex_ring
+CharacterVector rcpp_hex_ring(String h3s, int radius);
+RcppExport SEXP _h3_rcpp_hex_ring(SEXP h3sSEXP, SEXP radiusSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type h3s(h3sSEXP);
+    Rcpp::traits::input_parameter< int >::type radius(radiusSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_hex_ring(h3s, radius));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_h3_to_parent
 CharacterVector rcpp_h3_to_parent(String h3s, int res);
 RcppExport SEXP _h3_rcpp_h3_to_parent(SEXP h3sSEXP, SEXP resSEXP) {
@@ -126,6 +138,18 @@ BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< CharacterVector >::type h3Str(h3StrSEXP);
     rcpp_result_gen = Rcpp::wrap(h3_is_res_class_iii(h3Str));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_h3_line
+CharacterVector rcpp_h3_line(String startStr, String endStr);
+RcppExport SEXP _h3_rcpp_h3_line(SEXP startStrSEXP, SEXP endStrSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< String >::type startStr(startStrSEXP);
+    Rcpp::traits::input_parameter< String >::type endStr(endStrSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_h3_line(startStr, endStr));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -281,6 +305,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_h3_rcpp_hex_ring", (DL_FUNC) &_h3_rcpp_hex_ring, 2},
     {"_h3_rcpp_h3_to_parent", (DL_FUNC) &_h3_rcpp_h3_to_parent, 2},
     {"_h3_rcpp_h3_to_children", (DL_FUNC) &_h3_rcpp_h3_to_children, 2},
     {"_h3_rcpp_compact", (DL_FUNC) &_h3_rcpp_compact, 1},
@@ -292,6 +317,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_h3_h3_get_base_cell", (DL_FUNC) &_h3_h3_get_base_cell, 1},
     {"_h3_h3_is_pentagon", (DL_FUNC) &_h3_h3_is_pentagon, 1},
     {"_h3_h3_is_res_class_iii", (DL_FUNC) &_h3_h3_is_res_class_iii, 1},
+    {"_h3_rcpp_h3_line", (DL_FUNC) &_h3_rcpp_h3_line, 2},
     {"_h3_num_hexagons", (DL_FUNC) &_h3_num_hexagons, 1},
     {"_h3_hex_area", (DL_FUNC) &_h3_hex_area, 2},
     {"_h3_edge_length", (DL_FUNC) &_h3_edge_length, 2},

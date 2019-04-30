@@ -26,5 +26,7 @@ RUN apt-get install -y --no-install-recommends \
   libudunits2-dev \
   libgdal-dev
 
-RUN install2.r --error sf
+RUN install2.r --error \
+  sf \
+  leaflet
 
