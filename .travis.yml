@@ -18,6 +18,7 @@ r_binary_packages:
   - sf
 
 before_install:
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install --yes libudunits2-dev libproj-dev libgeos-dev libgdal-dev; fi
   - git clone https://github.com/uber/h3.git h3c
   - pushd h3c
   - git pull origin master --tags
