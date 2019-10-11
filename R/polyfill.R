@@ -7,6 +7,8 @@ polyfill_ <- function(polygon, res = 7) {
 #' @param polygon geo-coordinates of polygon as lng/lat pairs (matrix) or object of class \code{sf}
 #'   or \code{sfc}
 #' @inheritParams geo_to_h3
+#' @return character vector of H3 indexes
+#' @example inst/examples/api-reference/polyfill.R
 #' @export
 polyfill <- function(polygon, res = 7) {
   UseMethod("polyfill", polygon)
