@@ -100,6 +100,10 @@ edge_length <- function(res, unit) {
     .Call(`_h3_edge_length`, res, unit)
 }
 
+rcpp_polyfill <- function(coords, res) {
+    .Call(`_h3_rcpp_polyfill`, coords, res)
+}
+
 rcpp_k_ring <- function(h3s, radius) {
     .Call(`_h3_rcpp_k_ring`, h3s, radius)
 }

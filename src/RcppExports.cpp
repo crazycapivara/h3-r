@@ -188,6 +188,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rcpp_polyfill
+CharacterVector rcpp_polyfill(NumericMatrix coords, int res);
+RcppExport SEXP _h3_rcpp_polyfill(SEXP coordsSEXP, SEXP resSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type coords(coordsSEXP);
+    Rcpp::traits::input_parameter< int >::type res(resSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_polyfill(coords, res));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_k_ring
 CharacterVector rcpp_k_ring(String h3s, int radius);
 RcppExport SEXP _h3_rcpp_k_ring(SEXP h3sSEXP, SEXP radiusSEXP) {
@@ -321,6 +333,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_h3_num_hexagons", (DL_FUNC) &_h3_num_hexagons, 1},
     {"_h3_hex_area", (DL_FUNC) &_h3_hex_area, 2},
     {"_h3_edge_length", (DL_FUNC) &_h3_edge_length, 2},
+    {"_h3_rcpp_polyfill", (DL_FUNC) &_h3_rcpp_polyfill, 2},
     {"_h3_rcpp_k_ring", (DL_FUNC) &_h3_rcpp_k_ring, 2},
     {"_h3_h3_distance", (DL_FUNC) &_h3_h3_distance, 2},
     {"_h3_rcpp_k_ring_distances", (DL_FUNC) &_h3_rcpp_k_ring_distances, 2},
