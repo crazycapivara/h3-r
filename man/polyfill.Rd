@@ -16,7 +16,7 @@ polyfill(polygon, res = 7)
 \method{polyfill}{sf}(polygon, res = 7)
 }
 \arguments{
-\item{polygon}{geo-coordinates of polygon as lng/lat pairs (matrix) or object of class \code{sf}
+\item{polygon}{geo-coordinates of polygon as lat/lng pairs (matrix) or object of class \code{sf}
 or \code{sfc}}
 
 \item{res}{resolution between 0 and 15}
@@ -30,5 +30,5 @@ Get all hexagons with centers contained in a given polygon.
 \examples{
 nc <- sf::st_read(system.file("shape/nc.shp", package = "sf"),  quiet = TRUE) \%>\%
   sf::st_transform(4326)
-h3_indexes <- polyfill(nc[1,], res = 7)
+h3_indexes <- polyfill(nc[1, ], res = 7)
 }

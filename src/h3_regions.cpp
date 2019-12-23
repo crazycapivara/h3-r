@@ -14,8 +14,8 @@ CharacterVector rcpp_polyfill(NumericMatrix coords, int res) {
   GeoCoord* sfVerts = new GeoCoord[n];
   for (int i = 0; i < n; i++) {
     GeoCoord coord;
-    coord.lon = degsToRads( mercatorLng( coords(i, 0) ) );
-    coord.lat = degsToRads( mercatorLat( coords(i, 1) ) );
+    coord.lat = degsToRads( mercatorLat( coords(i, 0) ) );
+    coord.lon = degsToRads( mercatorLng( coords(i, 1) ) );
     sfVerts[i] = coord;
   }
 

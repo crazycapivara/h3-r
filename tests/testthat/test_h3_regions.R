@@ -9,8 +9,8 @@ test_that("polyfill matrix", {
   # Prepare
   resolution <- 7
   nc <- read_nc()
-  lnglat <- c("X", "Y")
-  polygon <- sf::st_coordinates(nc[1, ])[, lnglat]
+  latlng <- c("Y", "X")
+  polygon <- sf::st_coordinates(nc[1, ])[, latlng]
 
   # Act
   h3_indexes <- polyfill(polygon, resolution)

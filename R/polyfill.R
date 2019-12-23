@@ -4,7 +4,7 @@ polyfill_ <- function(polygon, res = 7) {
 }
 
 #' Get all hexagons with centers contained in a given polygon.
-#' @param polygon geo-coordinates of polygon as lng/lat pairs (matrix) or object of class \code{sf}
+#' @param polygon geo-coordinates of polygon as lat/lng pairs (matrix) or object of class \code{sf}
 #'   or \code{sfc}
 #' @inheritParams geo_to_h3
 #' @return character vector of H3 indexes
@@ -23,8 +23,8 @@ polyfill.matrix <- function(polygon, res = 7) {
 #' @name polyfill
 #' @export
 polyfill.sfc <- function(polygon, res = 7) {
-  lnglat <- c("X", "Y")
-  sf::st_coordinates(polygon[1])[, lnglat] %>%
+  latlng <- c("Y", "X")
+  sf::st_coordinates(polygon[1])[, latlng] %>%
     polyfill(res)
 }
 
