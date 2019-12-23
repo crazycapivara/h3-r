@@ -1,7 +1,7 @@
 Package: h3
 Title: R bindings for H3
-Version: 3.3.1
-Date: 2019-03-08
+Version: 3.3.2
+Date: 2019-12-23
 Authors@R: person("Stefan","Kuethe", role = c("aut", "cre"), email = "crazycapivara@gmail.com")
 Maintainer: Stefan Kuethe <crazycapivara@gmail.com>
 Description: Provides R bindings for H3 <https://uber.github.io/h3/>,
@@ -20,11 +20,11 @@ Imports:
   magrittr,
   tibble
 Suggests:
-    sf,
-    testthat,
-    knitr,
-    rmarkdown,
-    leaflet,
-    dplyr
+  sf,
+  testthat,
+  knitr,
+  rmarkdown,
+  leaflet,
+  dplyr
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr

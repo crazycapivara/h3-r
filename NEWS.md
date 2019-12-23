@@ -1,7 +1,11 @@
+# h3 3.3.2
+
+* Added bindings for `polyfill`.
+
 # h3 3.3.1
 
-* Added bindings for `compact`, `edgeLength`, `h3IsPentagon` and `h3IsResClassIII`
-* Added _unidirectional edge functions_
+* Added bindings for `compact`, `edgeLength`, `h3IsPentagon` and `h3IsResClassIII`.
+* Added _unidirectional edge functions_.
 
 # h3 3.3.0
 
