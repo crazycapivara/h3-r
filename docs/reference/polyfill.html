@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get the parent of the given hexagon at a particular resolution. — h3_to_parent • H3 for R</title>
+<title>Get all hexagons with centers contained in a given polygon. — polyfill • H3 for R</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Get the parent of the given hexagon at a particular resolution. — h3_to_parent" />
+<meta property="og:title" content="Get all hexagons with centers contained in a given polygon. — polyfill" />
 
-<meta property="og:description" content="Get the parent of the given hexagon at a particular resolution." />
+<meta property="og:description" content="Get all hexagons with centers contained in a given polygon." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,37 +105,51 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get the parent of the given hexagon at a particular resolution.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/crazycapivara/h3-r/blob/master/R/h3_hierachy.R'><code>R/h3_hierachy.R</code></a></small>
-    <div class="hidden name"><code>h3_to_parent.Rd</code></div>
+    <h1>Get all hexagons with centers contained in a given polygon.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/crazycapivara/h3-r/blob/master/R/polyfill.R'><code>R/polyfill.R</code></a></small>
+    <div class="hidden name"><code>polyfill.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Get the parent of the given hexagon at a particular resolution.</p>
+    <p>Get all hexagons with centers contained in a given polygon.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>h3_to_parent</span>(<span class='no'>h3_index</span>, <span class='no'>res</span>)</pre>
+    <pre class="usage"><span class='fu'>polyfill</span>(<span class='no'>polygon</span>, <span class='kw'>res</span> <span class='kw'>=</span> <span class='fl'>7</span>)
+
+<span class='co'># S3 method for matrix</span>
+<span class='fu'>polyfill</span>(<span class='no'>polygon</span>, <span class='kw'>res</span> <span class='kw'>=</span> <span class='fl'>7</span>)
+
+<span class='co'># S3 method for sfc</span>
+<span class='fu'>polyfill</span>(<span class='no'>polygon</span>, <span class='kw'>res</span> <span class='kw'>=</span> <span class='fl'>7</span>)
+
+<span class='co'># S3 method for sf</span>
+<span class='fu'>polyfill</span>(<span class='no'>polygon</span>, <span class='kw'>res</span> <span class='kw'>=</span> <span class='fl'>7</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>h3_index</th>
-      <td><p>character scalar representing a valid H3 index</p></td>
+      <th>polygon</th>
+      <td><p>geo-coordinates of polygon as lat/lng pairs (matrix) or object of class <code>sf</code>
+or <code>sfc</code></p></td>
     </tr>
     <tr>
       <th>res</th>
-      <td><p>resolution of parent</p></td>
+      <td><p>resolution between 0 and 15</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>character scalar</p>
+    <p>character vector of H3 indexes</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>nc</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>sf</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/sf/topics/st_read'>st_read</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"shape/nc.shp"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"sf"</span>),  <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>) <span class='kw'>%&gt;%</span>
+  <span class='kw pkg'>sf</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/sf/topics/st_transform'>st_transform</a></span>(<span class='fl'>4326</span>)
+<span class='no'>h3_indexes</span> <span class='kw'>&lt;-</span> <span class='fu'>polyfill</span>(<span class='no'>nc</span>[<span class='fl'>1</span>, ], <span class='kw'>res</span> <span class='kw'>=</span> <span class='fl'>7</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -143,7 +157,9 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

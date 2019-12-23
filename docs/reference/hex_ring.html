@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get the parent of the given hexagon at a particular resolution. — h3_to_parent • H3 for R</title>
+<title>Get the hollow hexagonal ring centered at the given origin. — hex_ring • H3 for R</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Get the parent of the given hexagon at a particular resolution. — h3_to_parent" />
+<meta property="og:title" content="Get the hollow hexagonal ring centered at the given origin. — hex_ring" />
 
-<meta property="og:description" content="Get the parent of the given hexagon at a particular resolution." />
+<meta property="og:description" content="Get the hollow hexagonal ring centered at the given origin." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,35 +105,35 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get the parent of the given hexagon at a particular resolution.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/crazycapivara/h3-r/blob/master/R/h3_hierachy.R'><code>R/h3_hierachy.R</code></a></small>
-    <div class="hidden name"><code>h3_to_parent.Rd</code></div>
+    <h1>Get the hollow hexagonal ring centered at the given origin.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/crazycapivara/h3-r/blob/master/R/h3_traversal.R'><code>R/h3_traversal.R</code></a></small>
+    <div class="hidden name"><code>hex_ring.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Get the parent of the given hexagon at a particular resolution.</p>
+    <p>Get the hollow hexagonal ring centered at the given origin.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>h3_to_parent</span>(<span class='no'>h3_index</span>, <span class='no'>res</span>)</pre>
+    <pre class="usage"><span class='fu'>hex_ring</span>(<span class='no'>h3_index</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>1</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>h3_index</th>
-      <td><p>character scalar representing a valid H3 index</p></td>
+      <td><p>character vector of H3 indexes</p></td>
     </tr>
     <tr>
-      <th>res</th>
-      <td><p>resolution of parent</p></td>
+      <th>radius</th>
+      <td><p>number of rings around the given center</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>character scalar</p>
+    <p>character vector of H3 indexes</p>
     
 
   </div>
