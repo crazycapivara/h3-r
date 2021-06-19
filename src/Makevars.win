@@ -5,4 +5,4 @@ PKG_LIBS=-Llh3
 $(SHLIB): lh3/lh3.a
 
 libmseed/libmseed.a:
-        @(cd lh3 && $(MAKE) static CC="$(CC)" CFLAGS="$(CFLAGS)")
+	@(cd lh3 && $(MAKE) static CC="$(CC)" CFLAGS="$(CFLAGS)")
