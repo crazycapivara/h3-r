@@ -9,3 +9,4 @@
 ^docker-compose.yml$
 sandbox/
 
+^data-raw$
