@@ -10,3 +10,4 @@
 sandbox/
 
 ^data-raw$
+^\.github$
