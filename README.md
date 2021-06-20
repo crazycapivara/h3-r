@@ -1,32 +1,46 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-H3-R
-====
 
-[![Travis build status](https://travis-ci.org/crazycapivara/h3-r.svg?branch=master)](https://travis-ci.org/crazycapivara/h3-r) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![H3 Version](https://img.shields.io/badge/h3-v3.3.0-blue.svg)](https://github.com/uber/h3/releases/tag/v3.3.0)
+# H3-R
 
-Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
+<!-- badges: start -->
 
-Documentation
--------------
+[![R build
+status](https://github.com/crazycapivara/h3-r/workflows/R-CMD-check/badge.svg)](https://github.com/crazycapivara/h3-r/actions)
+[![Travis build
+status](https://travis-ci.org/crazycapivara/h3-r.svg?branch=master)](https://travis-ci.org/crazycapivara/h3-r)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![H3
+Version](https://img.shields.io/badge/h3-v3.3.0-blue.svg)](https://github.com/uber/h3/releases/tag/v3.3.0)
+<!-- badges: end -->
 
--   [H3-R](https://crazycapivara.github.io/h3-r/)
--   [H3](https://uber.github.io/h3/)
+Provides R bindings for [H3](https://h3geo.org/), a hexagonal
+hierarchical spatial indexing system.
 
-Notes
------
+## Documentation
+
+  - [H3-R](https://crazycapivara.github.io/h3-r/)
+  - [H3](https://h3geo.org/)
+
+## Notes
 
 Succesfully built on
 
--   Linux
--   OSX
+  - Linux
+  - OSX
 
-If you cannot build the C library you might check [crazycapivara/h3forr](https://github.com/crazycapivara/h3forr) providing bindings via [V8](https://github.com/jeroen/V8) and [h3-js](https://github.com/uber/h3-js).
+If you cannot build the C library you might check
+[h3forr](https://github.com/crazycapivara/h3forr) providing bindings via
+[V8](https://github.com/jeroen/V8) and
+[h3-js](https://github.com/uber/h3-js).
 
-Requirements
-------------
+## Requirements
 
-First of all you need to build the [H3 C library](https://github.com/uber/h3) from source. Therefore, you need a C compiler, `cmake` and `make`.
+First of all you need to build the [H3 C
+library](https://github.com/uber/h3) from source. Therefore, you need a
+C compiler, `cmake` and `make`.
 
 Then you can run:
 
@@ -42,8 +56,7 @@ popd
 rm -rf h3-r
 ```
 
-Installation
-------------
+## Installation
 
 You can install h3 from github with:
 
@@ -52,8 +65,7 @@ You can install h3 from github with:
 devtools::install_github("crazycapivara/h3-r")
 ```
 
-Usage
------
+## Usage
 
 Core functions:
 
@@ -73,8 +85,7 @@ h3_to_geo_sf(h3_index)
 #> geometry type:  POINT
 #> dimension:      XY
 #> bbox:           xmin: -122.0503 ymin: 37.35172 xmax: -122.0503 ymax: 37.35172
-#> epsg (SRID):    4326
-#> proj4string:    +proj=longlat +datum=WGS84 +no_defs
+#> CRS:            EPSG:4326
 #>                     geometry
 #> 1 POINT (-122.0503 37.35172)
 
@@ -95,8 +106,7 @@ h3_to_geo_boundary_sf(h3_index)
 #> geometry type:  POLYGON
 #> dimension:      XY
 #> bbox:           xmin: -122.0666 ymin: 37.33992 xmax: -122.034 ymax: 37.36352
-#> epsg (SRID):    4326
-#> proj4string:    +proj=longlat +datum=WGS84 +no_defs
+#> CRS:            EPSG:4326
 #>                         geometry
 #> 1 POLYGON ((-122.0416 37.3411...
 ```
@@ -124,19 +134,26 @@ h3_set_to_multi_polygon(neighbors) %>%
 
 <img src="man/figures/README-h3-algorithms-2.png" width="400px" />
 
-Run tests
----------
+## Run tests
 
 ``` r
 devtools::test()
 #> Loading h3
 #> Testing h3
-#> H3 hierachy: ....
-#> H3 indexing: .....
-#> H3 inspection: ....
-#> H3 misc: ..
-#> H3 traversal: .....
-#> H3 uni edge: ...................
+#> ✓ |  OK F W S | Context
+#> ⠏ |   0       | H3 hierachy✓ |   4       | H3 hierachy
+#> ⠏ |   0       | H3 indexing✓ |   5       | H3 indexing
+#> ⠏ |   0       | H3 inspection✓ |   4       | H3 inspection
+#> ⠏ |   0       | H3 misc✓ |   2       | H3 misc
+#> ⠏ |   0       | H3 regions⠋ |   1       | H3 regions✓ |   2       | H3 regions [0.4 s]
+#> ⠏ |   0       | H3 traversal✓ |  10       | H3 traversal
+#> ⠏ |   0       | H3 uni edge✓ |  19       | H3 uni edge
 #> 
-#> DONE ======================================================================
+#> ══ Results ═════════════════════════════════════════════════════════════════════
+#> Duration: 0.6 s
+#> 
+#> OK:       46
+#> Failed:   0
+#> Warnings: 0
+#> Skipped:  0
 ```
