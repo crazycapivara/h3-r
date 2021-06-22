@@ -1,5 +1,6 @@
 #include <Rcpp.h>
-#include <h3/h3api.h>
+// #include <h3/h3api.h>
+#include "h3api.h"
 
 #include "h3_indexing.h"
 

@@ -1,10 +1,10 @@
 Package: h3
-Title: R bindings for H3
-Version: 3.3.2
-Date: 2019-12-23
+Title: R Bindings for H3
+Version: 3.7.1.9000
+Date: 2021-06-20
 Authors@R: person("Stefan","Kuethe", role = c("aut", "cre"), email = "crazycapivara@gmail.com")
 Maintainer: Stefan Kuethe <crazycapivara@gmail.com>
-Description: Provides R bindings for H3 <https://uber.github.io/h3/>,
+Description: Provides R bindings for H3 <https://h3geo.org/>,
   a hexagonal hierarchical spatial indexing system.
 URL: https://github.com/crazycapivara/h3-r
 BugReports: https://github.com/crazycapivara/h3-r/issues

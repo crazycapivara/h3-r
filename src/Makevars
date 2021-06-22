@@ -1,2 +1,0 @@
-PKG_LDFLAGS=/usr/local/lib
-PKG_LIBS=-L$(PKG_LDFLAGS) -lh3 -Wl,-rpath,$(PKG_LDFLAGS)
