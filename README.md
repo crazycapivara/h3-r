@@ -7,13 +7,11 @@
 
 [![R build
 status](https://github.com/crazycapivara/h3-r/workflows/R-CMD-check/badge.svg)](https://github.com/crazycapivara/h3-r/actions)
-[![Travis build
-status](https://travis-ci.org/crazycapivara/h3-r.svg?branch=master)](https://travis-ci.org/crazycapivara/h3-r)
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![H3
-Version](https://img.shields.io/badge/h3-v3.3.0-blue.svg)](https://github.com/uber/h3/releases/tag/v3.3.0)
+Version](https://img.shields.io/badge/h3-v3.7.1-blue.svg)](https://github.com/uber/h3/releases/tag/v3.7.1)
 <!-- badges: end -->
 
 Provides R bindings for [H3](https://h3geo.org/), a hexagonal
@@ -22,7 +20,7 @@ hierarchical spatial indexing system.
 ## Documentation
 
   - [H3-R](https://crazycapivara.github.io/h3-r/)
-  - [H3](https://h3geo.org/)
+  - [H3](https://h3geo.org/docs/)
 
 ## Notes
 
@@ -30,39 +28,19 @@ Succesfully built on
 
   - Linux
   - OSX
+  - Windows
 
-If you cannot build the C library you might check
-[h3forr](https://github.com/crazycapivara/h3forr) providing bindings via
-[V8](https://github.com/jeroen/V8) and
-[h3-js](https://github.com/uber/h3-js).
-
-## Requirements
-
-First of all you need to build the [H3 C
-library](https://github.com/uber/h3) from source. Therefore, you need a
-C compiler, `cmake` and `make`.
-
-Then you can run:
-
-``` bash
-git clone https://github.com/crazycapivara/h3-r.git
-pushd h3-r
-chmod +x install-h3c.sh
-# Install H3 C Library
-./install-h3c.sh
-# Install H3 for R
-R -q -e 'devtools::install()'
-popd
-rm -rf h3-r
-```
+Since v3.7.1 {h3} comes with a bundled version of the H3 C library, so
+that you no longer have to build it yourself before installing the R
+package.
 
 ## Installation
 
 You can install h3 from github with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("crazycapivara/h3-r")
+# install.packages("remotes")
+remotes::install_github("crazycapivara/h3-r")
 ```
 
 ## Usage
@@ -137,23 +115,8 @@ h3_set_to_multi_polygon(neighbors) %>%
 ## Run tests
 
 ``` r
-devtools::test()
+devtools::test(reporter = "minimal")
 #> Loading h3
 #> Testing h3
-#> ✓ |  OK F W S | Context
-#> ⠏ |   0       | H3 hierachy✓ |   4       | H3 hierachy
-#> ⠏ |   0       | H3 indexing✓ |   5       | H3 indexing
-#> ⠏ |   0       | H3 inspection✓ |   4       | H3 inspection
-#> ⠏ |   0       | H3 misc✓ |   2       | H3 misc
-#> ⠏ |   0       | H3 regions⠋ |   1       | H3 regions✓ |   2       | H3 regions [0.4 s]
-#> ⠏ |   0       | H3 traversal✓ |  10       | H3 traversal
-#> ⠏ |   0       | H3 uni edge✓ |  19       | H3 uni edge
-#> 
-#> ══ Results ═════════════════════════════════════════════════════════════════════
-#> Duration: 0.6 s
-#> 
-#> OK:       46
-#> Failed:   0
-#> Warnings: 0
-#> Skipped:  0
+#> ..............................................
 ```
