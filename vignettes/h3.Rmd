@@ -9,7 +9,7 @@ vignette: >
 
 The package h3 provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
 
-See also [H3 Tutorial](https://beta.observablehq.com/@nrabinowitz/h3-tutorial-the-h3-js-library).
+See also [H3 Tutorial](https://observablehq.com/@nrabinowitz/h3-tutorial-the-h3-js-library).
 
 ## Core Functions
 

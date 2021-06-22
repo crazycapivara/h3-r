@@ -14,16 +14,19 @@ knitr::opts_chunk$set(
 ```
 # H3-R
 
+<!-- badges: start -->
+[![R build status](https://github.com/crazycapivara/h3-r/workflows/R-CMD-check/badge.svg)](https://github.com/crazycapivara/h3-r/actions)
 [![Travis build status](https://travis-ci.org/crazycapivara/h3-r.svg?branch=master)](https://travis-ci.org/crazycapivara/h3-r)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![H3 Version](https://img.shields.io/badge/h3-v3.3.0-blue.svg)](https://github.com/uber/h3/releases/tag/v3.3.0)
+<!-- badges: end -->
 
-Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
+Provides R bindings for [H3](https://h3geo.org/), a hexagonal hierarchical spatial indexing system.
 
 ## Documentation
 
 * [H3-R](https://crazycapivara.github.io/h3-r/)
-* [H3](https://uber.github.io/h3/)
+* [H3](https://h3geo.org/)
 
 ## Notes
 
@@ -32,7 +35,7 @@ Succesfully built on
 * Linux
 * OSX
 
-If you cannot build the C library you might check [crazycapivara/h3forr](https://github.com/crazycapivara/h3forr) providing bindings via [V8](https://github.com/jeroen/V8) and [h3-js](https://github.com/uber/h3-js).
+If you cannot build the C library you might check [h3forr](https://github.com/crazycapivara/h3forr) providing bindings via [V8](https://github.com/jeroen/V8) and [h3-js](https://github.com/uber/h3-js).
 
 ## Requirements
 
