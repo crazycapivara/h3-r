@@ -1,6 +1,6 @@
 Package: h3
 Title: R Bindings for H3
-Version: 3.7.1.9000
+Version: 3.7.1
 Date: 2021-06-20
 Authors@R: person("Stefan","Kuethe", role = c("aut", "cre"), email = "crazycapivara@gmail.com")
 Maintainer: Stefan Kuethe <crazycapivara@gmail.com>
