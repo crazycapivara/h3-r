@@ -1,3 +1,7 @@
+# h3 3.7.1
+
+* Added bundled H3 C library.
+
 # h3 3.3.2
 
 * Added bindings for `polyfill`.
