@@ -8,7 +8,8 @@ vignette: >
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(dev = "png", dev.args = list(type = "cairo-png"))
+# Sometimes 'ragg' causes problemes when building 'pkgdown' site
+# knitr::opts_chunk$set(dev = "png", dev.args = list(type = "cairo-png"))
 ```
 
 The package h3 provides R bindings for [H3](https://h3geo.org/), a hexagonal hierarchical spatial indexing system.
