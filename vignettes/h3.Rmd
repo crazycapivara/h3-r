@@ -1,13 +1,17 @@
 ---
-title: "Introduction to h3"
+title: "Introduction to H3 for R"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Get started}
+  %\VignetteIndexEntry{Introduction to H3 for R}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-The package h3 provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(dev = "png", dev.args = list(type = "cairo-png"))
+```
+
+The package h3 provides R bindings for [H3](https://h3geo.org/), a hexagonal hierarchical spatial indexing system.
 
 See also [H3 Tutorial](https://observablehq.com/@nrabinowitz/h3-tutorial-the-h3-js-library).
 
