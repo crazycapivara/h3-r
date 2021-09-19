@@ -33,13 +33,13 @@ test_that("polyfill sf/sfc", {
 
 test_that("polyfill sf/sfc MULTIPOLYGON", {
   # Prepare
-  reseoltion <- 7
+  resolution <- 7
   multipolygon_sf <- read_nc()[4, ]
 
   # Act
   h3_indexes <- polyfill(multipolygon_sf, 7)
 
   # Assert
-  expect_is(st_geometry(multipolygon_sf), "sfc_MULTIPOLYGON")
+  expect_is(sf::st_geometry(multipolygon_sf), "sfc_MULTIPOLYGON")
   expect_length(h3_indexes, 145)
 })
