@@ -20,4 +20,6 @@ st_geometry(item) %>% plot(col = "blue")
 
 idx_ %>%
   h3::h3_to_geo_boundary_sf() %>%
-  st_geometry() %>% plot(add = TRUE)
+  st_geometry() %>% plot(add = TRUE, col = "green")
+
+st_geometry(item) %>% plot(add = TRUE)
