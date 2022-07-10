@@ -50,7 +50,7 @@ polyfill.sf <- function(polygon, res = 7) {
 }
 
 sfc_polygon_has_holes <- function(polygon) {
-  length(unique(st_coordinates(polygon)[, "L1"])) > 1
+  length(unique(sf::st_coordinates(polygon)[, "L1"])) > 1
 }
 
 polyfill_sfc_polygon_with_holes <- function(polygon, res = 7) {

@@ -19,7 +19,8 @@ Imports:
   Rcpp,
   magrittr,
   tibble,
-  purrr
+  purrr,
+  sfheaders
 Suggests:
   sf,
   testthat,
