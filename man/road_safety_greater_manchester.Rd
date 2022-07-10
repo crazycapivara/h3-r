@@ -4,11 +4,13 @@
 \name{road_safety_greater_manchester}
 \alias{road_safety_greater_manchester}
 \title{road safety greater manchester}
-\format{a matrix with 3110 rows and 2 columns:
+\format{
+a matrix with 3110 rows and 2 columns:
 \describe{
   \item{lat}{latitude}
   \item{lng}{longitude}
-}}
+}
+}
 \source{
 \url{https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv}
 }

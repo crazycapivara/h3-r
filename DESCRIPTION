@@ -19,7 +19,8 @@ Imports:
   Rcpp,
   magrittr,
   tibble,
-  purrr
+  purrr,
+  sfheaders
 Suggests:
   sf,
   testthat,
@@ -27,5 +28,5 @@ Suggests:
   rmarkdown,
   leaflet,
   dplyr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.2.0
 VignetteBuilder: knitr
