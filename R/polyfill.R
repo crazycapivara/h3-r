@@ -22,10 +22,19 @@ polyfill.matrix <- function(polygon, res = 7) {
 
 #' @name polyfill
 #' @export
-polyfill.sfc <- function(polygon, res = 7) {
+polyfill.sfc_POLYGON <- function(polygon, res = 7) {
   latlng <- c("Y", "X")
   sf::st_coordinates(polygon[1])[, latlng] %>%
     polyfill(res)
+}
+
+#' @name polyfill
+#' @export
+polyfill.sfc_MULTIPOLYGON <- function(polygon, res = 7) {
+  polygon[1] %>%
+    sf::st_cast("POLYGON") %>%
+    purrr::map(~ polyfill(sf::st_geometry(.x), res)) %>%
+    unlist()
 }
 
 #' @name polyfill

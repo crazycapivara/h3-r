@@ -1,7 +1,7 @@
 Package: h3
 Title: R Bindings for H3
-Version: 3.7.1
-Date: 2021-06-20
+Version: 3.7.1.9000
+Date: 2021-09-19
 Authors@R: person("Stefan","Kuethe", role = c("aut", "cre"), email = "crazycapivara@gmail.com")
 Maintainer: Stefan Kuethe <crazycapivara@gmail.com>
 Description: Provides R bindings for H3 <https://h3geo.org/>,
@@ -18,7 +18,8 @@ Depends:
 Imports:
   Rcpp,
   magrittr,
-  tibble
+  tibble,
+  purrr
 Suggests:
   sf,
   testthat,

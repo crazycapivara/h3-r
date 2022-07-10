@@ -19,7 +19,7 @@ test_that("polyfill matrix", {
   expect_length(h3_indexes, 237)
 })
 
-test_that("polyfill sfc/sf", {
+test_that("polyfill sf/sfc", {
   # Prepare
   resolution <- 7
   nc <- read_nc()
@@ -29,4 +29,17 @@ test_that("polyfill sfc/sf", {
 
   # Assert
   expect_length(h3_indexes, 237)
+})
+
+test_that("polyfill sf/sfc MULTIPOLYGON", {
+  # Prepare
+  resolution <- 7
+  multipolygon_sf <- read_nc()[4, ]
+
+  # Act
+  h3_indexes <- polyfill(multipolygon_sf, 7)
+
+  # Assert
+  expect_is(sf::st_geometry(multipolygon_sf), "sfc_MULTIPOLYGON")
+  expect_length(h3_indexes, 145)
 })

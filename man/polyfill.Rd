@@ -3,7 +3,8 @@
 \name{polyfill}
 \alias{polyfill}
 \alias{polyfill.matrix}
-\alias{polyfill.sfc}
+\alias{polyfill.sfc_POLYGON}
+\alias{polyfill.sfc_MULTIPOLYGON}
 \alias{polyfill.sf}
 \title{Get all hexagons with centers contained in a given polygon.}
 \usage{
@@ -11,7 +12,9 @@ polyfill(polygon, res = 7)
 
 \method{polyfill}{matrix}(polygon, res = 7)
 
-\method{polyfill}{sfc}(polygon, res = 7)
+\method{polyfill}{sfc_POLYGON}(polygon, res = 7)
+
+\method{polyfill}{sfc_MULTIPOLYGON}(polygon, res = 7)
 
 \method{polyfill}{sf}(polygon, res = 7)
 }
