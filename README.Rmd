@@ -46,7 +46,7 @@ Once on [CRAN](https://cran.r-project.org/) you can install {h3} with:
 install.packages("h3")
 ```
 
-You can install the latest of {h3} from github with:
+You can install the latest version of {h3} from github with:
 
 ```{r installation, eval = FALSE}
 # install.packages("remotes")
