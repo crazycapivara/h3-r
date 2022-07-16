@@ -47,7 +47,8 @@ h3_to_geo <- function(h3_index) {
 #' @export
 h3_to_geo_sf <- function(h3_index) {
   rcpp_h3_to_geo(h3_index) %>%
-    geo_to_sf()
+    geo_to_sf() %>%
+    cbind(h3_index = h3_index)
 }
 
 #' Get the vertices of the given H3 indexes.
@@ -65,5 +66,6 @@ h3_to_geo_boundary <- function(h3_index) {
 #' @export
 h3_to_geo_boundary_sf <- function(h3_index) { # nocov start
   rcpp_h3_to_geo_boundary(h3_index) %>%
-    geo_boundary_to_sf()
+    geo_boundary_to_sf() %>%
+    cbind(h3_index = h3_index)
 } # nocov end
