@@ -11,3 +11,5 @@ sandbox/
 
 ^data-raw$
 ^\.github$
+^cran-comments\.md$
+^CRAN-SUBMISSION$
