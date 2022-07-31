@@ -1,20 +1,20 @@
 Package: h3
 Title: R Bindings for H3
-Version: 3.7.1.9000
-Date: 2021-09-19
+Version: 3.7.2
+Date: 2022-07-16
 Authors@R: person("Stefan","Kuethe", role = c("aut", "cre"), email = "crazycapivara@gmail.com")
 Maintainer: Stefan Kuethe <crazycapivara@gmail.com>
 Description: Provides R bindings for H3 <https://h3geo.org/>,
   a hexagonal hierarchical spatial indexing system.
 URL: https://github.com/crazycapivara/h3-r
 BugReports: https://github.com/crazycapivara/h3-r/issues
-License: MIT + file LICENSE
+License: Apache License (>= 2)
 Encoding: UTF-8
 LazyData: true
 LinkingTo:
   Rcpp
 Depends:
-  R (>= 3.0)
+  R (>= 3.5.0)
 Imports:
   Rcpp,
   magrittr,

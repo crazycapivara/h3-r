@@ -12,6 +12,8 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![H3
 Version](https://img.shields.io/badge/h3-v3.7.1-blue.svg)](https://github.com/uber/h3/releases/tag/v3.7.1)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/h3)](https://CRAN.R-project.org/package=h3)
 <!-- badges: end -->
 
 Provides R bindings for [H3](https://h3geo.org/), a hexagonal
@@ -19,16 +21,16 @@ hierarchical spatial indexing system.
 
 ## Documentation
 
-  - [H3-R](https://crazycapivara.github.io/h3-r/)
-  - [H3](https://h3geo.org/docs/)
+-   [H3-R](https://crazycapivara.github.io/h3-r/)
+-   [H3](https://h3geo.org/docs/)
 
 ## Notes
 
 Succesfully built on
 
-  - Linux
-  - OSX
-  - Windows
+-   Linux
+-   macOS
+-   Windows
 
 Since v3.7.1 {h3} comes with a bundled version of the H3 C library, so
 that you no longer have to build it yourself before installing the R
@@ -36,7 +38,13 @@ package.
 
 ## Installation
 
-You can install h3 from github with:
+Once on [CRAN](https://cran.r-project.org/) you can install {h3} with:
+
+``` r
+install.packages("h3")
+```
+
+You can install the latest version of {h3} from github with:
 
 ``` r
 # install.packages("remotes")
@@ -59,13 +67,13 @@ resolution <- 7
 
 # Get the center of the hexagon
 h3_to_geo_sf(h3_index)
-#> Simple feature collection with 1 feature and 0 fields
-#> geometry type:  POINT
-#> dimension:      XY
-#> bbox:           xmin: -122.0503 ymin: 37.35172 xmax: -122.0503 ymax: 37.35172
-#> CRS:            EPSG:4326
-#>                     geometry
-#> 1 POINT (-122.0503 37.35172)
+#> Simple feature collection with 1 feature and 1 field
+#> Geometry type: POINT
+#> Dimension:     XY
+#> Bounding box:  xmin: -122.0503 ymin: 37.35172 xmax: -122.0503 ymax: 37.35172
+#> Geodetic CRS:  WGS 84
+#>          h3_index                   geometry
+#> 1 87283472bffffff POINT (-122.0503 37.35172)
 
 # Get the vertices of the hexagon
 h3_to_geo_boundary(h3_index)
@@ -80,13 +88,13 @@ h3_to_geo_boundary(h3_index)
 
 # Get the polygon of the hexagon
 h3_to_geo_boundary_sf(h3_index)
-#> Simple feature collection with 1 feature and 0 fields
-#> geometry type:  POLYGON
-#> dimension:      XY
-#> bbox:           xmin: -122.0666 ymin: 37.33992 xmax: -122.034 ymax: 37.36352
-#> CRS:            EPSG:4326
-#>                         geometry
-#> 1 POLYGON ((-122.0416 37.3411...
+#> Simple feature collection with 1 feature and 1 field
+#> Geometry type: POLYGON
+#> Dimension:     XY
+#> Bounding box:  xmin: -122.0666 ymin: 37.33992 xmax: -122.034 ymax: 37.36352
+#> Geodetic CRS:  WGS 84
+#>          h3_index                       geometry
+#> 1 87283472bffffff POLYGON ((-122.0416 37.3411...
 ```
 
 Useful algorithms:
@@ -105,7 +113,6 @@ h3_to_geo_boundary_sf(neighbors) %>%
 <img src="man/figures/README-h3-algorithms-1.png" width="400px" />
 
 ``` r
-
 h3_set_to_multi_polygon(neighbors) %>%
   sf::st_geometry() %>% plot(col = "green")
 ```
@@ -116,7 +123,7 @@ h3_set_to_multi_polygon(neighbors) %>%
 
 ``` r
 devtools::test(reporter = "minimal")
-#> Loading h3
-#> Testing h3
-#> ..............................................
+#> ℹ Loading h3
+#> ℹ Testing h3
+#> ...................................................
 ```

@@ -16,7 +16,7 @@ k_ring <- function(h3_index, radius = 1) {
 #' @export
 k_ring_distances <- function(h3_index, radius = 1) {
   out <- rcpp_k_ring_distances(h3_index, radius)
-  tibble::tibble(h3_index = out[[1]], distance = out[[2]])
+  tibble::tibble(h3_index = out[[1]], distance = as.integer(out[[2]]))
 }
 
 #' Get the hollow hexagonal ring centered at the given origin.

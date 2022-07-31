@@ -1,3 +1,7 @@
+# h3 3.7.2
+
+* Fixed issue (#42) with holes and multipolygons in `polyfill`. 
+
 # h3 3.7.1
 
 * Added bundled H3 C library.
