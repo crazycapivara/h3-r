@@ -1,7 +1,7 @@
 Package: h3
 Title: R Bindings for H3
 Version: 3.7.2
-Date: 2022-07-16
+Date: 2022-08-07
 Authors@R: person("Stefan","Kuethe", role = c("aut", "cre"), email = "crazycapivara@gmail.com")
 Maintainer: Stefan Kuethe <crazycapivara@gmail.com>
 Description: Provides R bindings for H3 <https://h3geo.org/>,
